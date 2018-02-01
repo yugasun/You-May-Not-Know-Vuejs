@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Don't Know Vuejs - Chapter 1</title>
+</head>
+<body>
+  <div id="app1"></div>
+  <div id="app2"></div>
+  <div id="app3"></div>
+  <div id="app4"></div>
+  <div id="app5" v-helloworld='msg'></div>
+  <div id="app6"></div>
+  <div id="app7"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    // 方法1
+    var app1 = new Vue({
+      el: "#app1",
+      template: "<h1>{{ msg }}</h1>",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+
+    // 方法2
+    var app2 = Vue.extend({
+      template: "<h1>{{ msg }}</h1>",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+    new app2().$mount("#app2")
+
+    // 方法3
+    var app3 = Vue.component("helloworld", {
+      template: "<h1>{{ msg }}</h1>",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+    new app3().$mount("#app3")
+
+    // 方法4
+    Vue.component("helloworld", {
+      template: "<h1>{{ msg }}</h1>",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+    var app4 = new Vue({
+      el: "#app4",
+      template: "<helloworld/>"
+    })
+
+    // 方法5
+    Vue.directive("helloworld", {
+      bind: function (el, binding) {
+        el.innerHTML = "<h1>"+ binding.value +"</h1>"
+      }
+    })
+    var app5 = new Vue({
+      el: "#app5",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+
+    // 方法6
+    var tpl = Vue.compile('<h1>{{ msg }}</h1>')
+    new Vue({
+      el: "#app6",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      },
+      render: tpl.render
+    })
+
+     // 方法7
+     new Vue({
+      el: "#app7",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      },
+      render: function (createElement) {
+        // 
+        return createElement('h1', this.msg)
+      }
+    })
+    
+  </script>
+</body>
+</html>

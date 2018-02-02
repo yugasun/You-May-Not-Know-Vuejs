@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Don't Know Vuejs - Chapter 1</title>
+</head>
+<body>
+  <h2>Demo1:</h2>
+  <div id="app1">
+    <button v-on:click="addItem">添加</button>
+    <ul>
+      <li v-for="item in list" v-bind:key="item.name">
+        <a v-bind:href="item.url">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <hr/>
+
+  <h2>Demo2:</h2>
+  <div id="app2">
+    <button v-on:click="addItem">添加</button>
+    <ul>
+      <li v-for="item in list" v-bind:key="item.name">
+        <a v-bind:href="item.url">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <hr/>
+
+  <h2>Demo3:</h2>
+  <div id="app3">
+    <button v-on:click="changeName">改变姓名</button>
+    <h4>{{ username }}</h4>
+  </div>
+  <hr/>
+
+  <h2>Demo4:</h2>
+  <div id="app4">
+    <button v-on:click="changeName">改变姓名</button>
+    <h4>{{ username }}</h4>
+  </div>
+  <hr/>
+
+  <h2>Demo5:</h2>
+  <div id="app5">
+    <button v-on:click="changeName">改变姓名</button>
+    <h4>{{ username }}</h4>
+  </div>
+  <hr/>
+
+  <h2>Demo6:</h2>
+  <div id="app6">
+    <button v-on:click="changeName">改变姓氏</button>
+    <h4>{{ username }}</h4>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    // demo 1
+    var app1 = new Vue({
+      el: "#app1",
+      data () {
+        return {
+          count: 1,
+          list: [
+            {
+              name: 'Vuejs官网',
+              url: 'https://cn.vuejs.org'
+            },
+            {
+              name: 'Github',
+              url: 'https://github.com'
+            },
+            {
+              name: 'Yuga博客1',
+              url: 'https://yugasun.com'
+            }
+          ]
+        }
+      },
+      methods: {
+        addItem () {
+          this.count++
+          this.list.push({
+            name: 'Yuga博客' + this.count,
+            url: 'https://yugasun.com'
+          })
+        }
+      }
+    })
+    
+    // demo2
+    var app2 = new Vue({
+      el: "#app2",
+      data () {
+        return {
+          count: 1,
+          // 实际开发中往往是通过接口请求获取
+          requestList: [
+            'Vuejs官网-https://cn.vuejs.org',
+            'Github-https://github.com',
+            'Yuga博客1-https://yugasun.com'
+          ]
+        }
+      },
+      computed: {
+        list: function() {
+          var list = [];
+          this.requestList.map(function(item, index) {
+            var tempArr = item.split('-');
+            list.push({
+              name: tempArr[0],
+              url: tempArr[1]
+            });
+          })
+          return list;  
+        }
+      },
+      methods: {
+        addItem () {
+          this.count++
+          this.requestList.push('Yuga博客' + this.count + '-https://yugasun.com')
+        }
+      }
+    })
+
+    var app3 = new Vue({
+      el: "#app3",
+      data () {
+        return {
+          firstName: 'Yuga',
+          lastName: 'Sun'
+        }
+      },
+      computed: {
+        username: {
+          get: function() {
+            return this.firstName + ' ' +  this.lastName;
+          },
+          set: function(newVal) {
+            var names = newVal.split(' ');
+            this.firstName = names[0];
+            this.lastName = names[1];
+          }
+        }
+      },
+      methods: {
+        changeName () {
+          if (this.username === 'Yuga Sun') {
+            this.username = 'Summer Wu';
+          } else {
+            this.username = 'Yuga Sun';
+          }
+          
+        }
+      }
+    })
+
+    var app4 = new Vue({
+      el: "#app4",
+      data () {
+        return {
+          firstName: 'Yuga',
+          lastName: 'Sun',
+          username: 'Yuga Sun'
+        }
+      },
+      watch: {
+        firstName: function(val, oldVal) {
+          this.username = val + ' ' + this.lastName;
+        },
+        lastName: function (val, oldVal) {
+          this.username = this.firstName + ' ' + val;
+        }
+      },
+      methods: {
+        changeName () {
+          if (this.username === 'Yuga Sun') {
+            this.firstName = 'Summer';
+            this.lastName = 'Wu';
+          } else {
+            this.firstName = 'Yuga';
+            this.lastName = 'Sun';
+          }
+        }
+      }
+    })
+
+    var app5 = new Vue({
+      el: "#app5",
+      data () {
+        return {
+          userinfo: {
+            firstName: 'Yuga',
+            lastName: 'Sun',
+          },
+          username: 'Yuga Sun'
+        }
+      },
+      watch: {
+        userinfo: {
+          deep: true,
+          handler: function (val, oldVal) {
+            this.username = val.firstName + ' ' + val.lastName;
+          }
+        }
+      },
+      methods: {
+        changeName () {
+          if (this.username === 'Yuga Sun') {
+            // this.userinfo = {
+            //   firstName: 'Summer',
+            //   lastName: 'Wu'
+            // }
+            this.userinfo.firstName = 'Summer'
+            this.userinfo.lastName = 'Wu'
+          } else {
+            this.userinfo.firstName = 'Yuga'
+            this.userinfo.lastName = 'Sun'
+          }
+        }
+      }
+    })
+
+    var app6 = new Vue({
+      el: "#app6",
+      data () {
+        return {
+          userinfo: {
+            firstName: 'Yuga',
+            lastName: 'Sun',
+          },
+          username: 'Yuga Sun'
+        }
+      },
+      watch: {
+        'userinfo.lastName': function (val, oldVal) {
+          this.username = this.userinfo.firstName + ' ' + val;
+        }
+      },
+      methods: {
+        changeName () {
+          if (this.username === 'Yuga Sun') {
+            this.userinfo.lastName = 'Wu'
+          } else {
+            this.userinfo.lastName = 'Sun'
+          }
+        }
+      }
+    })
+    
+  </script>
+</body>
+</html>

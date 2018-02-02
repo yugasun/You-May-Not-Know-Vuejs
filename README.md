@@ -1,5 +1,8 @@
 # You-Dont-Know-Vuejs
 
+![You don't know Vuejs](https://static.yugasun.com/you-dont-know-vuejs.png)
+
+
 《你不知道的Vuejs》系列文章是本人在过去一年多的时间里，从完全不知道Vuejs到熟练地使用Vuejs开发各种复杂的大型项目，从不同项目开发实践中总结的一些经验和技巧类文章。重点带你一步步熟悉如何使用Vuejs来开发基本的项目，包括周边生态中，一些较热门工具的使用和技巧，同时也会分享当面对较复杂功能需求时候，如何去分析和处理的过程。
 
 <!--more-->
@@ -33,4 +36,5 @@
 
 ## 文章直通车
 
-1. [花式渲染目标元素](/post/you-dont-know-vuejs-1.html)
+1. [花式渲染目标元素](https://yugasun.com/post/you-dont-know-vuejs-1.html)
+2. [深入浅出响应式系统](https://yugasun.com/post/you-dont-know-vuejs-2.html)

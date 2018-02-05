@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Don't Know Vuejs - Chapter 1</title>
+  <style>
+    #app2 span {
+      animation: fade-in 1s 0s ease-in-out both;
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Demo1:</h2>
+  <div id="app1">
+    <ul>
+      <li v-for="item in 5">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+  <hr/>
+
+  <h2>Demo2:</h2>
+  <div id="app2">
+    <span v-for="(item, index) in name" v-bind:style="{animationDelay: `${0.5 + index * 0.3}s`}">{{ item }}</span>
+  </div>
+  <hr/>
+
+  <h2>Demo3:</h2>
+  <div id="app3">
+    <!-- 相对于上面只添加了 `.left` 和 `.right` 修饰符 -->
+    <button v-on:click.left="handleClick('确定', $event)">确定</button>
+    <button v-on:click.right="handleClick('取消', $event)">取消</button><br>
+    {{ msg }}
+  </div>
+  <hr/>
+
+  <h2>Demo4:</h2>
+  <div id="app4">
+    <button v-on:click="startCount">开始倒计时</button>
+    <span v-count-down data-count="60" v-if="show" style="font-size:16px;">
+      60
+    </span>
+  </div>
+  <hr/>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    // demo 1
+    var app1 = new Vue({
+      el: "#app1"
+    })
+
+    // demo 2
+    var app2 = new Vue({
+      el: "#app2",
+      data () {
+        return {
+          name: 'yugasun'
+        }
+      }
+    })
+
+    // demo 3
+    var app3 = new Vue({
+      el: "#app3",
+      data () {
+        return {
+          btnText: ''
+        }
+      },
+      computed: {
+        msg () {
+          return this.btnText ? `点击了 ${this.btnText} 按钮` : '您还没点击任何按钮'
+        }
+      },
+      methods: {
+        handleClick (text, e) {
+          console.log(e)
+          this.btnText = text
+        }
+      }
+    })
+
+    var app4 = new Vue({
+      el: '#app4',
+      data () {
+        return {
+          show: false, // 是否显示倒计时
+          timer: null // 定时器
+        }
+      },
+      methods: {
+        startCount: function () {
+          this.show = true
+        }
+      },
+      directives: {
+        'count-down': {
+          bind: function (el, binding, vnode) {
+            let count = parseInt(el.getAttribute('data-count'))
+            this.timer = setInterval(function () {
+              if (count <= 0) {
+                clearInterval(this.timer)
+                this.timer = null
+              } else {
+                count--
+                el.innerHTML = count
+                el.setAttribute('data-count', count)
+              }
+            }, 1000)
+          }
+        }
+      }
+    })
+    
+  </script>
+</body>
+</html>

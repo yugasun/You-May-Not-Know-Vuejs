@@ -36,5 +36,7 @@
 
 ## 文章直通车
 
+0. [前言](https://yugasun.com/post/you-dont-know-vuejs-foreword.html)
 1. [花式渲染目标元素](https://yugasun.com/post/you-dont-know-vuejs-1.html)
 2. [深入浅出响应式系统](https://yugasun.com/post/you-dont-know-vuejs-2.html)
+3. [强大的指令系统](https://yugasun.com/post/you-dont-know-vuejs-3.html)

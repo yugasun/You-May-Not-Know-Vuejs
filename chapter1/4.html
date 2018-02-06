@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Don't Know Vuejs - Chapter 1</title>
+</head>
+<body>
+  <h2>Demo1:</h2>
+  <div id="app1">
+    <helloworld/>
+  </div>
+  <hr/>
+
+  <h2>Demo2:</h2>
+  <div id="app2">
+    <helloworld/>
+  </div>
+  <hr/>
+
+  <h2>Demo3:</h2>
+  <div id="app3">
+    当前输入内容：{{ text }}<br>
+    <com-input1 v-bind:text="text" v-on:change="handleChange"/>
+  </div>
+  <hr/>
+
+  <h2>Demo4:</h2>
+  <div id="app4">
+    当前输入内容：{{ text }}<br>
+    <com-input2 v-bind:text.sync="text"/>
+  </div>
+  <hr/>
+
+  <h2>Demo5:</h2>
+  <div id="app5">
+    组件A: <com-a></com-a><br>
+    组件B: <com-b></com-b>
+  </div>
+  <hr/>
+
+  <h2>Demo6:</h2>
+  <div id="app6">
+    <button v-on:click="changeType">改变组件</button><br>
+    <component v-bind:is="currentComp"></component>
+  </div>
+  <hr/>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    // demo1
+    Vue.component("helloworld", {
+      template: "<h1>{{ msg }}</h1>",
+      data () {
+        return {
+          msg: "Hello Vue.js!"
+        }
+      }
+    })
+    var app1 = new Vue({
+      el: "#app1"
+    })
+
+    // demo2
+    var app2 = new Vue({
+      el: "#app2",
+      components: {
+        'helloworld': {
+          template: "<h1>{{ msg }}</h1>",
+          data () {
+            return {
+              msg: "Hello Vue.js!"
+            }
+          }
+        }
+      }
+    })
+
+    // demo3
+    // 自定义输入组件
+    Vue.component('com-input1', {
+      props: {
+        text: {
+          type: String,
+          default: "请输入"
+        }
+      },
+      template: '<input v-on:change="handleChange" v-model="msg"/>',
+      data () {
+        return {
+          // 这里定义为 input 的 v-model绑定值
+          msg: this.text
+        }
+      },
+      methods: {
+        // 当input值变化时，执行函数，通过 $emit change 事件，
+        // 父级组件通过 v-on:change 来监听此事件，执行相关操作
+        handleChange (e) {
+          this.$emit('change', this.msg)
+        }
+      }
+    })
+    var app3 = new Vue({
+      el: "#app3",
+      data () {
+        return {
+          text: 'Hello Vue.js'
+        }
+      },
+      methods: {
+        handleChange (val) {
+          this.text = val
+        }
+      }
+    })
+
+    // demo 4
+    Vue.component('com-input2', {
+      props: {
+        text: {
+          type: String,
+          default: "请输入"
+        }
+      },
+      template: '<input v-on:change="handleChange" v-model="msg"/>',
+      data () {
+        return {
+          // 这里定义为 input 的 v-model绑定值
+          msg: this.text
+        }
+      },
+      methods: {
+        // 当input值变化时，执行函数，通过 $emit change 事件，
+        // 父级组件通过 v-on:change 来监听此事件，执行相关操作
+        handleChange (e) {
+          this.$emit('update:text', this.msg)
+        }
+      }
+    })
+    var app4 = new Vue({
+      el: "#app4",
+      data () {
+        return {
+          text: 'Hello Vue.js'
+        }
+      }
+    })
+
+    // demo 5
+    var bus = new Vue()
+    Vue.component('com-a', {
+      template: '<input v-on:change="handleChange" v-model="msg"/>',
+      data () {
+        return {
+          msg: 'Hello Vue.js'
+        }
+      },
+      methods: {
+        handleChange() {
+          bus.$emit('a-change', this.msg)
+        }
+      },
+      created () {
+        var me = this
+        bus.$on('b-change', function (msg) {
+          me.msg = msg
+        })
+      }
+    })
+    Vue.component('com-b', {
+      template: '<input v-on:change="handleChange" v-model="msg"/>',
+      data () {
+        return {
+          msg: 'Hello Vue.js'
+        }
+      },
+      methods: {
+        handleChange() {
+          bus.$emit('b-change', this.msg)
+        }
+      },
+      created () {
+        var me = this
+        bus.$on('a-change', function (msg) {
+          me.msg = msg
+        })
+      }
+    })
+    var app5 = new Vue({
+      el: '#app5'
+    })
+
+    var app6 = new Vue({
+      el: '#app6',
+      data () {
+        return {
+          type: 'a'
+        }
+      },
+      computed: {
+        currentComp () {
+          return this.type === 'a' ? 'com-a' : 'com-b';
+        }
+      },
+      components: {
+        'com-a': {
+          template: '<h1>我是组件a</h1>'
+        },
+        'com-b': {
+          template: '<h1>我是组件b</h1>'
+        }
+      },
+      methods: {
+        changeType () {
+          this.type = this.type === 'a' ? 'b' : 'a';
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>

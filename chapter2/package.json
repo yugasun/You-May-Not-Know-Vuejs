@@ -1,0 +1,23 @@
+{
+  "name": "vue-webpack-demo",
+  "version": "0.0.1",
+  "description": "vue+webpack project demo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack --progress --colors"
+  },
+  "keywords": [
+    "vue",
+    "webpack"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}

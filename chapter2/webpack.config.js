@@ -14,5 +14,28 @@ module.exports = {
   devServer: {
     // 这里定义 webpack-dev-server 开启的web服务的根目录
     contentBase: './'
+  },
+  module: {
+    // 这里用来配置处理不同后缀文件所使用的loader
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|gif|png)$/,
+        use: 'url-loader'
+      }
+    ]
   }
 }

@@ -1,0 +1,15 @@
+$red: rgb(218, 42, 42);
+
+html,body {
+  text-align: center;
+}
+
+h1 {
+  color: $red;
+}
+
+.logo {
+  margin-top: 40px;
+  width: 60px;
+  height: 60px;
+}

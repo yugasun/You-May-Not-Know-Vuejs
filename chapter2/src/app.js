@@ -1,11 +1,27 @@
-var Vue = require('vue')
+require('./app.scss');
+
+var Vue = require('vue');
+var logoSrc =  require('./logo.jpg')
 
 new Vue({
   el: "#app",
-  template: "<h1>{{ msg }}</h1>",
   data () {
     return {
-      msg: 'Hello Vue.js 222'
+      msg: 'Hello Vue.js'
     }
+  },
+  render (h) {
+    return (
+      h('div', [
+        h('img', {
+          domProps: {
+            src: logoSrc,
+            alt: 'logo',
+            className: 'logo'
+          }
+        }),
+        h('h1', this.msg)
+      ])
+    )
   }
-})
+});

@@ -44,3 +44,4 @@
 5. [工欲善其事必先利其器](https://yugasun.com/post/you-dont-know-vuejs-5.html)
 6. [单文件组件](https://yugasun.com/post/you-dont-know-vuejs-6.html)
 7. [使用ES6快乐的玩耍](https://yugasun.com/post/you-dont-know-vuejs-7.html)
+8. [使用ES6快乐的玩耍](https://yugasun.com/post/you-dont-know-vuejs-8.html)

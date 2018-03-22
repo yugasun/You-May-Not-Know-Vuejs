@@ -45,3 +45,4 @@
 6. [单文件组件](https://yugasun.com/post/you-dont-know-vuejs-6.html)
 7. [使用ES6快乐的玩耍](https://yugasun.com/post/you-dont-know-vuejs-7.html)
 8. [使用ESLint检查代码质量](https://yugasun.com/post/you-dont-know-vuejs-8.html)
+9. [定制开发项目模板](https://yugasun.com/post/you-dont-know-vuejs-9.html)

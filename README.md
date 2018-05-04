@@ -47,3 +47,4 @@
 8. [使用ESLint检查代码质量](https://yugasun.com/post/you-dont-know-vuejs-8.html)
 9. [定制开发项目模板](https://yugasun.com/post/you-dont-know-vuejs-9.html)
 10. [Vuejs 插件开发](https://yugasun.com/post/you-dont-know-vuejs-10.html)
+11. [Vuejs 自定义路由实现](https://yugasun.com/post/you-dont-know-vuejs-11.html)

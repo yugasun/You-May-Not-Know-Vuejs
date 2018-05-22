@@ -1,7 +1,8 @@
 <template>
   <div class="comp1">
     <h1>Component 1</h1>
-    <input type="text" v-model="msg" @change="handleChange">
+    Change by object reference: <input type="text" v-model="$bus.msg"><br/>
+    Change by event: <input type="text" v-model="msg" @change="handleChange">
   </div>
 </template>
 <script>

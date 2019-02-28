@@ -50,6 +50,7 @@
 11. [Vuejs 自定义路由实现](https://yugasun.com/post/you-may-not-know-vuejs-11.html)
 12. [Vuejs 状态管理](https://yugasun.com/post/you-may-not-know-vuejs-12.html)
 13. [Vuejs 最佳实践（1）](https://yugasun.com/post/you-may-not-know-vuejs-13.html)
+14. [Vuejs 最佳实践（2）](https://yugasun.com/post/you-may-not-know-vuejs-14.html)
 
 ## License
 

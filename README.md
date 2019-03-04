@@ -46,11 +46,11 @@
 7. [使用ES6快乐的玩耍](./docs/you-may-not-know-vuejs-7.md)
 8. [使用ESLint检查代码质量](./docs/you-may-not-know-vuejs-8.md)
 9. [定制开发项目模板](./docs/you-may-not-know-vuejs-9.md)
-10. [Vuejs 插件开发](./docs/you-may-not-know-vuejs-10.md)
-11. [Vuejs 自定义路由实现](./docs/you-may-not-know-vuejs-11.md)
-12. [Vuejs 状态管理](./docs/you-may-not-know-vuejs-12.md)
-13. [Vuejs 最佳实践（1）](./docs/you-may-not-know-vuejs-13.md)
-14. [Vuejs 最佳实践（2）](./docs/you-may-not-know-vuejs-14.md)
+10. [插件开发](./docs/you-may-not-know-vuejs-10.md)
+11. [自定义路由实现](./docs/you-may-not-know-vuejs-11.md)
+12. [状态管理](./docs/you-may-not-know-vuejs-12.md)
+13. [最佳实践（1）](./docs/you-may-not-know-vuejs-13.md)
+14. [最佳实践（2）](./docs/you-may-not-know-vuejs-14.md)
 
 ## License
 

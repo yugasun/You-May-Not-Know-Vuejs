@@ -49,8 +49,9 @@
 10. [插件开发](./docs/you-may-not-know-vuejs-10.md)
 11. [自定义路由实现](./docs/you-may-not-know-vuejs-11.md)
 12. [状态管理](./docs/you-may-not-know-vuejs-12.md)
-13. [最佳实践（1）](./docs/you-may-not-know-vuejs-13.md)
-14. [最佳实践（2）](./docs/you-may-not-know-vuejs-14.md)
+13. [最佳实践(1)](./docs/you-may-not-know-vuejs-13.md)
+14. [最佳实践(2)](./docs/you-may-not-know-vuejs-14.md)
+15. [最佳实践(3)](./docs/you-may-not-know-vuejs-15.md)
 
 ## License
 

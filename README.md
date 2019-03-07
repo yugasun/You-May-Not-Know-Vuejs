@@ -33,7 +33,7 @@
 
 ## 在线阅读
 
-[Vuepress专题站](https://yugasun.github.io/you-may-not-know-vuejs/)
+[Vuepress专题站](https://yugasun.github.io/You-May-Not-Know-Vuejs/)
 [掘金专栏](https://juejin.im/user/583b9227ac502e006c25d1a7/posts)
 
 ## License

@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/you-may-not-know-vuejs/',
+  base: '/You-May-Not-Know-Vuejs/',
   title: '你也许不知道的 Vuejs',
   ga: 'UA-85991013-5',
   description: 'Vue 从入门到精通系列',

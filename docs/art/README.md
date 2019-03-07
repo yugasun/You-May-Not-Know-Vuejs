@@ -31,5 +31,5 @@
 
 ## 在线阅读
 
-[专题站](https://yugasun.github.io/You-May-Not-Know-Vuejs)
-[掘金专栏](https://juejin.im/user/583b9227ac502e006c25d1a7/posts)
+* [专题站](https://yugasun.github.io/You-May-Not-Know-Vuejs/)
+* [掘金专栏](https://juejin.im/user/583b9227ac502e006c25d1a7/posts)

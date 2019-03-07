@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 使用ESLint检查代码质量
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2018-03-13 18:19:16
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-8.html](https://yugasun.com/post/you-may-not-know-vuejs-8.html)
-本文可全文转载，但需要保留原作者和出处。
+# 使用ESLint检查代码质量
 
 ## 前言
 

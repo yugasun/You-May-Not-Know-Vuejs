@@ -1,16 +1,4 @@
----
-title: 你也许不知道的Vuejs - 最佳实践（2）
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2019-02-28 14:17:20
----
-
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-14.html](https://yugasun.com/post/you-may-not-know-vuejs-14.html)
-本文可全文转载，但需要保留原作者和出处。
+# 最佳实践(2)
 
 我们在实际开发过程中，当项目越来越大，组件越来越丰富时，经常会面临一个问题：很多组件会公用一些通用的 `props`、`data` 和 `methods`等声明，但是也会掺杂组件自己的一些私有特有声明，那么我们能不能像类的继承一样，来提炼和继承呢？ 当然这是可以的，这里可以通过两个基本 API [extends](https://cn.vuejs.org/v2/api/#extends) 和 [mixins](https://cn.vuejs.org/v2/api/#mixins) 来实现。这两个API是可以相互替换的，唯一的区别是，`extends` 属性接受的通常是个单一组件对象，而 `mixins` 属性接受的是个组件对象数组。当他们只继承单一组件时，是可以互换的。由于本人开发中，习惯使用 `mixins`，所以本文所有实例均使用 `mixins` 来实现。
 

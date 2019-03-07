@@ -1,21 +1,6 @@
----
-title: 你也许不知道的Vuejs - 前言
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-date: 2018-01-31 22:09:08
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
----
+# 前言
 
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-foreword.html](https://yugasun.com/post/you-may-not-know-vuejs-foreword.html)
-本文可全文转载，但需要保留原作者和出处。
-
-## 写在最前
-
-《你也许不知道的Vuejs》系列文章是本人在过去一年多的时间里，从完全不知道Vuejs到熟练地使用Vuejs开发各种复杂的大型项目，从不同项目开发实践中总结的一些经验和技巧类文章。重点带你一步步熟悉如何使用Vuejs来开发基本的项目，包括周边生态中，一些较热门工具的使用和技巧，同时也会分享当面对较复杂功能需求时候，如何去分析和处理的过程。
-
-<!--more-->
+《你可能不知道的Vuejs》系列文章是本人在过去时间里，从完全不知道 Vuejs 到熟练地使用 Vuejs 开发各种复杂的大型项目，从不同项目开发实践中总结的一些经验和技巧类文章。重点带你一步步熟悉如何使用Vuejs来开发基本的项目，包括周边生态中，一些较热门工具的使用和技巧，同时也会分享当面对较复杂功能需求时候，如何去分析和处理的过程。
 
 ## 我为什么要写这个系列
 
@@ -33,17 +18,18 @@ tags:
 2. Vuejs的高级用法
 3. Vuejs结合webpack进行开发
 4. 使用ES6语法快乐的玩耍Vuejs
-5. Vuejs项目实战，小细节见大智慧
-6. ...
+5. Vuejs最佳实践
+6. Vuejs项目实战，小细节见大智慧
 
 因为本文是开篇，所以在写作过程中，有可能内容会有所变动，也会根据读者的反馈和指正进行相应修改，但是大体内容还是按照上面的思路进行的。
 
-本系列所有文章相关源码都github上找到：[You Don't Know Vuejs](https://github.com/yugasun/You-May-Not-Know-Vuejs)
+本系列所有文章相关源码都github上找到：[You May Not Know Vuejs](https://github.com/yugasun/You-May-Not-Know-Vuejs)
 
 ## 最后
 
 因为个人经验有限，文章难免会有所纰漏，欢迎大侠批评指正。
 
-## 专题目录
+## 在线阅读
 
-[You-May-Not-Know-Vuejs](https://github.com/yugasun/You-May-Not-Know-Vuejs#%E6%96%87%E7%AB%A0%E7%9B%B4%E9%80%9A%E8%BD%A6)
+[专题站](https://yugasun.github.io/you-may-not-know-vuejs)
+[掘金专栏](https://juejin.im/user/583b9227ac502e006c25d1a7/posts)

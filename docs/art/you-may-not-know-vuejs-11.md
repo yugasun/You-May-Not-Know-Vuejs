@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 自定义路由实现
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2018-05-03 15:17:24
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-11.html](https://yugasun.com/post/you-may-not-know-vuejs-11.html)
-本文可全文转载，但需要保留原作者和出处。
+# 自定义路由实现
 
 对于单页面应用，前端路由是必不可少的，官方也提供了 [vue-router 库](https://github.com/vuejs/vue-router) 供我们方便的实现，但是如果你的应用非常简单，就没有必要引入整个路由库了，可以通过 Vuejs 动态渲染的API来实现。
 

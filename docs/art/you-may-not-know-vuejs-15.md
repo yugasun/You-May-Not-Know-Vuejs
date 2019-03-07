@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 最佳实践(3)
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2019-03-04 17:26:36
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-15.html](https://yugasun.com/post/you-may-not-know-vuejs-15.html)
-本文可全文转载，但需要保留原作者和出处。
+# 最佳实践(3)
 
 相信大多数使用 Vue 项目都会面临国际化的问题，而 [vue-i18n](https://github.com/kazupon/vue-i18n) 便是国际化的不二之选，它用起来非常简单，但是同时也会带来一些问题和挑战。本篇是个人在项目上国际化时一些经验的总结，希望能在国际化的道路上帮到你。
 

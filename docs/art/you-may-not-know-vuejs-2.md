@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 深入浅出响应式系统
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-date: 2018-02-02 21:09:08
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-2.html](https://yugasun.com/post/you-may-not-know-vuejs-2.html)
-本文可全文转载，但需要保留原作者和出处。
+# 深入浅出响应式系统
 
 虽然说是Vuejs实践，但是有些重要的理论还是必不可少的，本文将简单的带你了解 `Vuejs的响应式原理`。
 

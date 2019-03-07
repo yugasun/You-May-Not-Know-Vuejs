@@ -1,0 +1,32 @@
+{
+  "name": "you-may-not-know-vuejs",
+  "description": "![You may know Vuejs](https://static.yugasun.com/you-may-not-know-vuejs.png)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev ./docs",
+    "build": "vuepress build ./docs",
+    "deploy": "sh build/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugasun/You-May-Not-Know-Vuejs.git"
+  },
+  "keywords": [
+    "vue",
+    "practice",
+    "tutorial"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yugasun/You-May-Not-Know-Vuejs/issues"
+  },
+  "homepage": "https://github.com/yugasun/You-May-Not-Know-Vuejs#readme",
+  "devDependencies": {
+    "vuepress": "^0.8.4"
+  }
+}

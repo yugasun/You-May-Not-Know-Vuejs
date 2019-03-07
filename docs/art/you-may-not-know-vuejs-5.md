@@ -1,16 +1,4 @@
----
-title: 你也许不知道的Vuejs - 工欲善其事必先利其器
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-date: 2018-02-06 21:00:00
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-5.html](https://yugasun.com/post/you-may-not-know-vuejs-5.html)
-本文可全文转载，但需要保留原作者和出处。
-
+# 工欲善其事必先利其器
 
 ## 开发环境
 

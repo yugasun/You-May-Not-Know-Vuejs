@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 最佳实践（1）
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2018-05-31 11:27:19
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-13.html](https://yugasun.com/post/you-may-not-know-vuejs-13.html)
-本文可全文转载，但需要保留原作者和出处。
+# 最佳实践(1)
 
 有了前面文章的铺垫，相信一路看过来的新手的你开发一个中型的 Vuejs 应用已经不在话下，包括 Vuejs 生态核心工具（vue-router，vuex）的使用也不成问题。但是在实际项目开发过程中，我们要做的工作不仅仅是完成我们的业务代码，当一个需求完成后，我们还需要考虑更多后期优化工作，本篇主要讲述代码层面的优化。
 

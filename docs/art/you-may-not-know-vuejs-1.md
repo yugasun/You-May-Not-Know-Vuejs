@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 花式渲染目标元素
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-date: 2018-02-01 11:09:08
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-1.html](https://yugasun.com/post/you-may-not-know-vuejs-1.html)
-本文可全文转载，但需要保留原作者和出处。
+# 花式渲染目标元素
 
 ## Vue.js是什么
 

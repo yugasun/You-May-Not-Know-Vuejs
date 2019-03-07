@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 强大的指令系统
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-date: 2018-02-05 21:09:08
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-3.html](https://yugasun.com/post/you-may-not-know-vuejs-3.html)
-本文可全文转载，但需要保留原作者和出处。
+# 强大的指令系统
 
 > 在 `Vuejs` 中，指令（Directives）是带有 `v-` 前缀的特殊属性。指令属性的预期值是 **单个 Javascript 表达式**（`v-for` 是个例外）。指令的职责是，当表达式改变时，将其产生的连带影响，响应式的作用于 DOM。
 

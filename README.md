@@ -1,11 +1,8 @@
-# You-May-Not-Know-Vuejs
+# 你也许不知道的 Vuejs
 
 ![You may know Vuejs](https://static.yugasun.com/you-may-not-know-vuejs.png)
 
-
-《你可能不知道的Vuejs》系列文章是本人在过去一年多的时间里，从完全不知道Vuejs到熟练地使用Vuejs开发各种复杂的大型项目，从不同项目开发实践中总结的一些经验和技巧类文章。重点带你一步步熟悉如何使用Vuejs来开发基本的项目，包括周边生态中，一些较热门工具的使用和技巧，同时也会分享当面对较复杂功能需求时候，如何去分析和处理的过程。
-
-<!--more-->
+《你可能不知道的Vuejs》系列文章是本人在过去时间里，从完全不知道 Vuejs 到熟练地使用 Vuejs 开发各种复杂的大型项目，从不同项目开发实践中总结的一些经验和技巧类文章。重点带你一步步熟悉如何使用Vuejs来开发基本的项目，包括周边生态中，一些较热门工具的使用和技巧，同时也会分享当面对较复杂功能需求时候，如何去分析和处理的过程。
 
 ## 我为什么要写这个系列
 
@@ -34,24 +31,10 @@
 
 因为个人经验有限，文章难免会有所纰漏，欢迎大侠批评指正。
 
-## 文章直通车
+## 在线阅读
 
-0. [前言](./docs/you-may-not-know-vuejs-foreword.md)
-1. [花式渲染目标元素](./docs/you-may-not-know-vuejs-1.md)
-2. [深入浅出响应式系统](./docs/you-may-not-know-vuejs-2.md)
-3. [强大的指令系统](./docs/you-may-not-know-vuejs-3.md)
-4. [组件式开发](./docs/you-may-not-know-vuejs-4.md)
-5. [工欲善其事必先利其器](./docs/you-may-not-know-vuejs-5.md)
-6. [单文件组件](./docs/you-may-not-know-vuejs-6.md)
-7. [使用ES6快乐的玩耍](./docs/you-may-not-know-vuejs-7.md)
-8. [使用ESLint检查代码质量](./docs/you-may-not-know-vuejs-8.md)
-9. [定制开发项目模板](./docs/you-may-not-know-vuejs-9.md)
-10. [插件开发](./docs/you-may-not-know-vuejs-10.md)
-11. [自定义路由实现](./docs/you-may-not-know-vuejs-11.md)
-12. [状态管理](./docs/you-may-not-know-vuejs-12.md)
-13. [最佳实践(1)](./docs/you-may-not-know-vuejs-13.md)
-14. [最佳实践(2)](./docs/you-may-not-know-vuejs-14.md)
-15. [最佳实践(3)](./docs/you-may-not-know-vuejs-15.md)
+[Vuepress专题站](https://yugasun.github.io/you-may-not-know-vuejs/)
+[掘金专栏](https://juejin.im/user/583b9227ac502e006c25d1a7/posts)
 
 ## License
 

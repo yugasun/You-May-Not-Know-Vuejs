@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 状态管理
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2018-05-21 15:46:22
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-12.html](https://yugasun.com/post/you-may-not-know-vuejs-12.html)
-本文可全文转载，但需要保留原作者和出处。
+# 状态管理
 
 ## 前言
 

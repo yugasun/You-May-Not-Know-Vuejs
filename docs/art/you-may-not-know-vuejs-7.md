@@ -1,15 +1,4 @@
----
-title: 你也许不知道的Vuejs - 使用ES6快乐的玩耍
-desc: 关于Vuejs项目实战经验分享，一步一步带你学会用Vuejs框架开发项目。
-reward: true
-tags:
-  - Vuejs
-  - You-May-Not-Know-Vuejs
-date: 2018-02-11 10:04:17
----
-
-> by [yugasun](https://yugasun.com) from [https://yugasun.com/post/you-may-not-know-vuejs-7.html](https://yugasun.com/post/you-may-not-know-vuejs-7.html)
-本文可全文转载，但需要保留原作者和出处。
+# 使用ES6快乐的玩耍
 
 上一篇中我们已经学会使用 `babel` 将 ES6 转化为 ES5 了，并且展示了一些 ES6 代码，这一篇将重点聊聊 ES6 在 Vuejs 项目中一些部分应用。
 

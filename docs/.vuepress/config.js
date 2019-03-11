@@ -4,7 +4,8 @@ module.exports = {
   ga: 'UA-85991013-5',
   description: 'Vue 从入门到精通系列',
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['script', { async: 'async', type: 'text/javascript'}, 'var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?22a0ab0b25c4b63f25e294e1585f3aa5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();']
   ],
   markdown: {
     toc: {

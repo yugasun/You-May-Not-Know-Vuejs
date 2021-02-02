@@ -4,11 +4,11 @@
 
 既然是实战，怎离不开项目开发的环境呢？先给大家推荐下我的个人开发环境：
 
-> **硬件设备**：Mac OSX
-> **编译器**：Visual Studio Code
-> **命令行工具**：iTerm2
-> **调试工具**：Chrome Dev tool + vue-devtools
-> **版本管理**：Git
+> **硬件设备**：Mac OSX  
+> **编译器**：Visual Studio Code  
+> **命令行工具**：iTerm2  
+> **调试工具**：Chrome Dev tool + vue-devtools  
+> **版本管理**：Git  
 
 <!--more-->
 

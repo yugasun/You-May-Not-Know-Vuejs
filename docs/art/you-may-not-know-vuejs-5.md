@@ -18,7 +18,7 @@
 
 前面的文章中使用 Vue，都是直接引入源码方式来使用，但是实际开发中项目一般很复杂，并且会涉及到很多页面模板，不可能所有的功能我们都写在同一个js文件，然后在通过 script 标签引入，这样项目大了会越来越不易维护，所以项目需要模块化开发。
 
-> 关于什么事模块化，具体如何模块化构架我们的项目，推荐阅读 [JavaScript 模块化入门Ⅰ：理解模块](https://zhuanlan.zhihu.com/p/22890374) 和 [JavaScript 模块化入门Ⅱ：模块打包构建](https://zhuanlan.zhihu.com/p/22945985)。
+> 关于什么是模块化，具体如何模块化构架我们的项目，推荐阅读 [JavaScript 模块化入门Ⅰ：理解模块](https://zhuanlan.zhihu.com/p/22890374) 和 [JavaScript 模块化入门Ⅱ：模块打包构建](https://zhuanlan.zhihu.com/p/22945985)。
 
 当项目代码多了，我们的模块文件越来越多，就需要工具来帮助我们更好的管理和打包这些模块，让我们能更好的关注模块化开发，而不是这些琐碎的事情。于是 `webpack` 类似的工具就应运而生，当然除了 `webpack` 还有很多类似的工具，他们各有各的优点，比如：[rollup](https://github.com/rollup/rollup)、[parcel](https://github.com/parcel-bundler/parcel)...。
 

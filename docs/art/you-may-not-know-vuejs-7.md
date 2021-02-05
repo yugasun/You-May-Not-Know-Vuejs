@@ -80,7 +80,7 @@ new Vue({
 
 ## 异步编程
 
-> `Promise` 是异步编程的一种解决方案，比传统的解决方案（回调函数）更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了 `Promise` 对象。详细 `Promise` 介绍可以阅读这篇博文：[异步编程之 Promise](https://yugasun.com/post/async-programming-promise.html)；
+> `Promise` 是异步编程的一种解决方案，比传统的解决方案（回调函数）更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了 `Promise` 对象。深入了解`Promise` 可以阅读这篇博文：[异步编程之 Promise](https://yugasun.com/post/async-programming-promise.html)；
 > ES2017 标准又引入了 async 函数，是的异步操作变得更加方便。更详细的介绍在这里：[async 函数](http://es6.ruanyifeng.com/#docs/async)。
 
 有的人说有了 `async 函数` 就不再需要 `Promise` 了，我觉得是不对的，因为很多异步模块都是先基于 `Promise` 封装，然后才能经过  `async/await` 函数来操作的。当然把两者结合起来用，可以完成更加强大的异步编程操作，Vuejs 代码也变得更加灵活、简介和强大。

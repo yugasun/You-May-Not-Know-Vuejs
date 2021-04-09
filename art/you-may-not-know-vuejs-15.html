@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你也许不知道的 Vuejs | 最佳实践(3)</title>
+    <meta name="description" content="Vue 从入门到精通系列">
+    <link rel="icon" href="/You-May-Not-Know-Vuejs/logo.png">
+  <script async="async" type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?22a0ab0b25c4b63f25e294e1585f3aa5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+    
+    <link rel="preload" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css" as="style"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" as="script"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/11.a0c92858.js" as="script"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/css/1.styles.d7e0337a.css"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/1.d7e0337a.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/10.6ce6cf04.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/12.7d4c9781.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/13.c15113c9.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/14.f14af779.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/15.f98ca526.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/16.d188bdd4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/17.14df2db4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/18.5c2715c0.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/19.b277ba6f.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/2.20d5ee32.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/20.adab3611.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/3.bda80ff8.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/4.2b6993a1.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/5.b42c65dc.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/6.d7819112.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/7.be44d24b.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/8.48b0d968.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/9.87cbe311.js">
+    <link rel="stylesheet" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/You-May-Not-Know-Vuejs/" class="home-link router-link-active"><!----><span class="site-name">
+      你也许不知道的 Vuejs
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/You-May-Not-Know-Vuejs/art/" aria-current="page" class="sidebar-link">前言</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-1.html" class="sidebar-link">花式渲染目标元素</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-2.html" class="sidebar-link">深入浅出响应式系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-3.html" class="sidebar-link">强大的指令系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-4.html" class="sidebar-link">组件式开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-5.html" class="sidebar-link">工欲善其事必先利其器</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html" class="sidebar-link">单文件组件</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-7.html" class="sidebar-link">使用ES6快乐的玩耍</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-8.html" class="sidebar-link">使用ESLint检查代码质量</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html" class="sidebar-link">定制开发项目模板</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-10.html" class="sidebar-link">插件开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-11.html" class="sidebar-link">自定义路由实现</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-12.html" class="sidebar-link">状态管理</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-13.html" class="sidebar-link">最佳实践(1)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html" class="sidebar-link">最佳实践(2)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html" aria-current="page" class="active sidebar-link">最佳实践(3)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#基本使用" class="sidebar-link">基本使用</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#小技巧" class="sidebar-link">小技巧</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#获取键值集合" class="sidebar-link">获取键值集合</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#多元化的消息" class="sidebar-link">多元化的消息</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#可选数组消息" class="sidebar-link">可选数组消息</a></li></ul></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#模块化" class="sidebar-link">模块化</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html#专题目录" class="sidebar-link">专题目录</a></li></ul></li></ul></div><div class="page"><div class="content"><h1 id="最佳实践-3"><a href="#最佳实践-3" aria-hidden="true" class="header-anchor">#</a> 最佳实践(3)</h1><p>相信大多数使用 Vue 项目都会面临国际化的问题，而 <a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="noopener noreferrer">vue-i18n</a> 便是国际化的不二之选，它用起来非常简单，但是同时也会带来一些问题和挑战。本篇是个人在项目上国际化时一些经验的总结，希望能在国际化的道路上帮到你。</p><h2 id="基本使用"><a href="#基本使用" aria-hidden="true" class="header-anchor">#</a> 基本使用</h2><p><code>vue-i18n</code> 官方文档介绍的很清楚，先在 <code>src/lang</code> 目录下分别创建三个文件 <code>index.js</code>，<code>zh.js</code>，<code>en.js</code>，
+然后在 <code>index.js</code> 中创建 <code>i18n</code> 实例并导出，供 Vue 使用，代码如下：</p><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> VueI18n <span class="token keyword">from</span> <span class="token string">'vue-i18n'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> zhMsg <span class="token keyword">from</span> <span class="token string">'./zh'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> enMsg <span class="token keyword">from</span> <span class="token string">'./en'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> messages <span class="token operator">=</span> <span class="token punctuation">{</span>
+  zh<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>zhMsg<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  en<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>enMsg<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token punctuation">:</span> <span class="token string">'zh'</span><span class="token punctuation">,</span>
+  messages<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> i18n<span class="token punctuation">;</span>
+</code></pre><p>接着编写语言包文件:</p><pre class="language-js"><code><span class="token comment">// zh.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Vue-I18n 示例'</span><span class="token punctuation">,</span>
+      subtitle<span class="token punctuation">:</span> <span class="token string">'你将学会如何使用 vue-i18n'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// en.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Vue-I18n Demo'</span><span class="token punctuation">,</span>
+      subtitle<span class="token punctuation">:</span> <span class="token string">'You will learn how to use vue-i18n'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>接下来在入口文件 <code>src/main.js</code> 文件中引入：</p><pre class="language-js"><code><span class="token comment">// ...</span>
+<span class="token keyword">import</span> i18n <span class="token keyword">from</span> <span class="token string">'./lang'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  i18n<span class="token punctuation">,</span>
+  router<span class="token punctuation">,</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;App/&gt;'</span><span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>到这里就配置好了，于是我们就可以在组件中使用了，使用方法如下 <code>src/views/index.vue</code>；</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{ $t('index.header.title') }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>{{ $t('index.header.subtitle') }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>看起来是不是很简单，引入 <code>vue-i18n</code> 后，它会在 <code>Vue</code> 实例上挂载它提供的国际化的 api，比如 <code>$t、$tc、$td</code> 等格式化函数。使用时我们只需要在组件中直接调用就行，比如：<code>this.$t</code>。</p><p><code>$t</code> 接受两个参数，第一个为我们在语言包中访问的属性路径，各级属性用 <code>.</code> 符号链接，第二个参数可以动态传参，比如我们将 <code>index.header.subtitle</code> 的模板修改为 <code>You will learn how to use {name}</code>，那么我们可以像下面这样使用：</p><pre class="language-js"><code><span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'index.header.subtitle'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> 'vue<span class="token operator">-</span>i18n<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><h2 id="小技巧"><a href="#小技巧" aria-hidden="true" class="header-anchor">#</a> 小技巧</h2><h3 id="获取键值集合"><a href="#获取键值集合" aria-hidden="true" class="header-anchor">#</a> 获取键值集合</h3><p>相信大家已经知道 <code>vue-i18n</code> 如何使用了，建议通读 <a href="https://kazupon.github.io/vue-i18n/started.html" target="_blank" rel="noopener noreferrer">官方文档</a>，自己动手配置熟悉下。</p><p>大多数情况下，我们只需要使用 <code>$t</code> 就可以满足我们的需求了。但是当我们的的语言包层级越来越深时，你会发现属性路径越来越长，而且在某些组件内，需要书写很多遍，比如上面的 <code>index.header.title</code> 和 <code>index.header.subtitle</code>，它们的前缀都是 <code>index.header</code>，在这里写两遍我们能接受，如果是100遍呢？作为一名懒惰的程序员，怎么能接受同样的事情做3遍呢，更何况是100遍，简直不敢想象!</p><p>其实我们可以先获取前缀的对象集合，然后通过这个集合对象来访问，节省臃长的前缀的重复书写，使用的时候我们需要先在 <code>src/views/index.vue</code> 组件的 <code>computed</code> 中定义国际化集合：</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'Index'</span><span class="token punctuation">,</span>
+  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">indexMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'index.header'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>接下来修改下模板中的书写方式：</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{ indexMsg.title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>{{ indexMsg.subtitle }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+</code></pre><blockquote><p>注意：这里必须定义为计算属性，不然在切换语言时，视图国际化将无法自动更新。</p></blockquote><h3 id="多元化的消息"><a href="#多元化的消息" aria-hidden="true" class="header-anchor">#</a> 多元化的消息</h3><p>曾经在做一个登录错误信息提示的时候，遇到个需求：用户多次输入错误后，会提示多长时间后重试，但是接口只是返回个剩余秒数，需要根据这个秒数计算出剩余的时分秒，当大于1小时时，提示 <code>请 xx 小时后重试</code>，当小于1小时时，提示 <code>请 xx 分 xx 秒后重试</code>。一般碰到这种需求，我们是肯定需要结合模板变量来实现，最简单的方式就是直接定义两个国际化键值，比如 <code>msg1，msg2</code>，然后通过计算出的小时数来做 <code>if</code> 判断就行。</p><p>但是当项目越来越庞大，项目中类似的需求越来越多的时候，你会发现你的语言包的键值对越来越多，到了最后，取个属性名就要想半天，不知道大家有没有跟我类似的痛点，所以我对于这种类似需求用 <code>$tc</code> 函数来实现的。</p><p><code>$tc</code> 函数允许我们一个国际化键值可以通过管道符 <code>|</code> 来分割多元化的信息，如下：</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  login<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    tips<span class="token punctuation">:</span> <span class="token string">'请{minute}分{second}秒后再重试 | 请{hour}小时后再重试'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后在模板中使用：</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ $tc('login.tips', 1, {minute: 30, second: 29}) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ $tc('login.tips', 2, {hour: 1}) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>对于上面的需求，我只需要根据接口返回的秒数，计算下 <code>hour</code> 值，然后写一个三目运算就解决了：</p><pre class="language-js"><code>hour <span class="token operator">&gt;=</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$tc</span><span class="token punctuation">(</span><span class="token string">'login.tips'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>hour<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$tc</span><span class="token punctuation">(</span><span class="token string">'login.tips'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>minute<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> second<span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><h3 id="可选数组消息"><a href="#可选数组消息" aria-hidden="true" class="header-anchor">#</a> 可选数组消息</h3><p>其实对于可选的国际化消息需求，我们还可以通过数组来实现，比如我们的某个订单状态需要国际化，<code>0-5</code> 分别对应不同的状态，我们只需要定义简单的数组就可以搞定了。</p><p>首先定义语言包：</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  order<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    status<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'待付款'</span><span class="token punctuation">,</span>
+      <span class="token string">'待发货'</span><span class="token punctuation">,</span>
+      <span class="token string">'已发货'</span><span class="token punctuation">,</span>
+      <span class="token string">'已签收'</span><span class="token punctuation">,</span>
+      <span class="token string">'已取消'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后我们只需要根据不同状态，来读取键值就行：</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>{{ $t(`order.status[orderStatus]`) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'Index'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      orderStatus<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>当然这里也可以通过多元化的方式来实现，大家可以自行尝试下。</p><h2 id="模块化"><a href="#模块化" aria-hidden="true" class="header-anchor">#</a> 模块化</h2><p>随着项目越来越大，你会发现 <code>src/lang/zh.js</code> 文件越来越臃肿，每次改个国际化文案，需要在上千行的对象中，找半天对应的键值对，而且那深不可测的属性层级，着实让人眼花缭乱。</p><p>既然 <code>src/lang/zh.js</code> 是 <code>js</code> 文件，我们当然就可以对其进行拆分，然后把不同的模块拆分成独立的 js 文件进行维护，是不是找起来会轻松好多，比如我们尝试将实例中的 <code>zh.js</code> 产分成 <code>src/lang/zh-modules/index.js</code>、<code>src/lang/zh-modules/login.js</code>、 <code>src/lang/zh-modules/order.js</code> 三个模块文件：</p><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Vue-I18n 示例'</span><span class="token punctuation">,</span>
+      subtitle<span class="token punctuation">:</span> <span class="token string">'你将学会如何使用 vue-i18n'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// login.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  login<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    tips<span class="token punctuation">:</span> <span class="token string">'请{minute}分{second}秒后再重试 | 请{hour}小时后再重试'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// order.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  order<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    status<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'待付款'</span><span class="token punctuation">,</span>
+      <span class="token string">'待发货'</span><span class="token punctuation">,</span>
+      <span class="token string">'已发货'</span><span class="token punctuation">,</span>
+      <span class="token string">'已签收'</span><span class="token punctuation">,</span>
+      <span class="token string">'已取消'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后在 <code>src/lang/zh.js</code> 文件中一次引入：</p><pre class="language-js"><code><span class="token keyword">import</span> index <span class="token keyword">from</span> <span class="token string">'./zh-modules/index'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> login <span class="token keyword">from</span> <span class="token string">'./zh-modules/login'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> order <span class="token keyword">from</span> <span class="token string">'./zh-modules/order'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>index<span class="token punctuation">,</span>
+  <span class="token operator">...</span>login<span class="token punctuation">,</span>
+  <span class="token operator">...</span>order<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>这样就变得清晰很多，下次产品需要你修改登录相关的文案，你只需要修改 <code>login.js</code> 模块就行。</p><p>但是按模块拆分后，有人就会有疑问了，我这么拆分后，语言模块文件会随着语言种类成倍数增加，应该怎么办？</p><p>这里就说说我的解决办法，就是将语言文件按模块合并。所谓 <code>天下大势，合久必分，分久必合</code>。我们将相同的模块按文件合并起来就可以了，比如 <code>index</code> 模块：</p><pre class="language-js"><code><span class="token keyword">const</span> zh <span class="token operator">=</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Vue-I18n 示例'</span><span class="token punctuation">,</span>
+      subtitle<span class="token punctuation">:</span> <span class="token string">'你将学会如何使用 vue-i18n'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> en <span class="token operator">=</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Vue-I18n Demo'</span><span class="token punctuation">,</span>
+      subtitle<span class="token punctuation">:</span> <span class="token string">'You will learn how to use vue-i18n'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  zh<span class="token punctuation">,</span>
+  en<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后只需要在 <code>src/lang/index.js</code> 引入，稍作修改就行：</p><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> VueI18n <span class="token keyword">from</span> <span class="token string">'vue-i18n'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> indexMsg <span class="token keyword">from</span> <span class="token string">'./modules/index'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> loginMsg <span class="token keyword">from</span> <span class="token string">'./modules/login'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> orderMsg <span class="token keyword">from</span> <span class="token string">'./modules/order'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> messages <span class="token operator">=</span> <span class="token punctuation">{</span>
+  zh<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>indexMsg<span class="token punctuation">.</span>zh<span class="token punctuation">,</span>
+    <span class="token operator">...</span>loginMsg<span class="token punctuation">.</span>zh<span class="token punctuation">,</span>
+    <span class="token operator">...</span>orderMsg<span class="token punctuation">.</span>zh<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  en<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>indexMsg<span class="token punctuation">.</span>en<span class="token punctuation">,</span>
+    <span class="token operator">...</span>loginMsg<span class="token punctuation">.</span>en<span class="token punctuation">,</span>
+    <span class="token operator">...</span>orderMsg<span class="token punctuation">.</span>en<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token punctuation">:</span> <span class="token string">'zh'</span><span class="token punctuation">,</span>
+  messages<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> i18n<span class="token punctuation">;</span>
+</code></pre><p>此时你会发现我们已经不需要 <code>src/lang/zh.js</code> 和 <code>src/lang/en.js</code> 文件了。而且这里有个好处是，我们在让翻译帮忙的事后，只需要在同一个文件中对我们的相同键值进行修改和编辑了，是不是方便很多，赶紧动手尝试下吧~</p><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2><p>本文只是个人在开发过程中，关于国际化方案的经验总结，我相信大家也有很多提高效率的方案。希望本篇能够解决你在开发中遇到的一些疑惑和痛点，也非常欢迎评论或来信交流你的优化方案。</p><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/blob/master/chapter4/3" target="_blank" rel="noopener noreferrer">源码在此</a></p><h2 id="专题目录"><a href="#专题目录" aria-hidden="true" class="header-anchor">#</a> 专题目录</h2><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs#%E6%96%87%E7%AB%A0%E7%9B%B4%E9%80%9A%E8%BD%A6" target="_blank" rel="noopener noreferrer">You-May-Not-Know-Vuejs</a></p></div><div class="content edit-link"><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/edit/master/docs/art/you-may-not-know-vuejs-15.md" target="_blank" rel="noopener noreferrer">错别字纠正</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html" class="prev">
+          最佳实践(2)
+        </a></span><!----></p></div></div></div></div>
+    <script src="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" defer></script><script src="/You-May-Not-Know-Vuejs/assets/js/11.a0c92858.js" defer></script>
+  </body>
+</html>

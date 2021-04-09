@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你也许不知道的 Vuejs | 单文件组件</title>
+    <meta name="description" content="Vue 从入门到精通系列">
+    <link rel="icon" href="/You-May-Not-Know-Vuejs/logo.png">
+  <script async="async" type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?22a0ab0b25c4b63f25e294e1585f3aa5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+    
+    <link rel="preload" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css" as="style"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" as="script"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/16.d188bdd4.js" as="script"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/css/1.styles.d7e0337a.css"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/1.d7e0337a.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/10.6ce6cf04.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/11.a0c92858.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/12.7d4c9781.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/13.c15113c9.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/14.f14af779.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/15.f98ca526.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/17.14df2db4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/18.5c2715c0.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/19.b277ba6f.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/2.20d5ee32.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/20.adab3611.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/3.bda80ff8.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/4.2b6993a1.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/5.b42c65dc.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/6.d7819112.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/7.be44d24b.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/8.48b0d968.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/9.87cbe311.js">
+    <link rel="stylesheet" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/You-May-Not-Know-Vuejs/" class="home-link router-link-active"><!----><span class="site-name">
+      你也许不知道的 Vuejs
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/You-May-Not-Know-Vuejs/art/" aria-current="page" class="sidebar-link">前言</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-1.html" class="sidebar-link">花式渲染目标元素</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-2.html" class="sidebar-link">深入浅出响应式系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-3.html" class="sidebar-link">强大的指令系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-4.html" class="sidebar-link">组件式开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-5.html" class="sidebar-link">工欲善其事必先利其器</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html" aria-current="page" class="active sidebar-link">单文件组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#为什么需要单文件组件" class="sidebar-link">为什么需要单文件组件</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#初识单文件组件" class="sidebar-link">初识单文件组件</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#使用预处理器" class="sidebar-link">使用预处理器</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#加载全局设置文件" class="sidebar-link">加载全局设置文件</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#有作用域的-style" class="sidebar-link">有作用域的 style</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#自定义块" class="sidebar-link">自定义块</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html#专题目录" class="sidebar-link">专题目录</a></li></ul></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-7.html" class="sidebar-link">使用ES6快乐的玩耍</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-8.html" class="sidebar-link">使用ESLint检查代码质量</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html" class="sidebar-link">定制开发项目模板</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-10.html" class="sidebar-link">插件开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-11.html" class="sidebar-link">自定义路由实现</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-12.html" class="sidebar-link">状态管理</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-13.html" class="sidebar-link">最佳实践(1)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html" class="sidebar-link">最佳实践(2)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html" class="sidebar-link">最佳实践(3)</a></li></ul></div><div class="page"><div class="content"><h1 id="单文件组件"><a href="#单文件组件" aria-hidden="true" class="header-anchor">#</a> 单文件组件</h1><h2 id="为什么需要单文件组件"><a href="#为什么需要单文件组件" aria-hidden="true" class="header-anchor">#</a> 为什么需要单文件组件</h2><p>在之前的实例中，我们都是通过 <code>Vue.component</code> 或者 <code>components</code> 属性的方式来定义组件，这种方式在很多中小规模的项目中还好，但在复杂的项目中，下面这些缺点就非常明显了：</p><blockquote><p><strong>字符串模板</strong>：缺乏高亮，书写麻烦，特别是 HTML 多行的时候，虽然可以将模板写在 html 文件中，但是侵入性太强，不利于组件解耦分离。<br><strong>不支持CSS</strong>：意味着当 HTML 和 JavaScript 组件化时，CSS明显被遗漏了<br><strong>没有构建步骤</strong>：限制只能使用 HTML 和 ES5 JavaScript，而不能使用预处理器。</p></blockquote><p>Vuejs 提供的扩展名为 <code>.vue</code> 的 <strong>单文件组件</strong> 为以上所有问题提供了解决方案。</p><h2 id="初识单文件组件"><a href="#初识单文件组件" aria-hidden="true" class="header-anchor">#</a> 初识单文件组件</h2><p>还是利用 <a href="https://yugasun.com/post/you-may-not-know-vuejs-5.html" target="_blank" rel="noopener noreferrer">工欲善其事必先利其器</a> 中的源码，在 <code>src</code> 目录下创建 <code>hello.vue</code> 文件，内容如下：</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token punctuation">:</span> <span class="token string">'Hello Vue.js 单文件组件~'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>然后在 app.js 中引入使用：</p><pre class="language-js"><code><span class="token comment">// ES6 引入模块语法</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> hello <span class="token keyword">from</span> <span class="token string">'./hello.vue'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">&quot;#app&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;hello/&gt;'</span><span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    hello
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>此时项目是没法运行的，因为 <code>.vue</code> 文件 webpack 是没法是别的，它需要对应的 <code>vue-loader</code> 来处理才行，而且细心的朋友会发现 <code>hello.vue</code> 中用到了 ES6 语法，此时就需要用到相应的语法转化 <code>loader</code> 将 ES6 转化成主流浏览器兼容的 ES5 语法，这里就需要用到官方推荐的 <code>babel</code> 工具了。先安装需要的 <code>loader</code>:</p><pre class="language-bash"><code><span class="token comment"># hello.vue 文件中使用了 css，所以需要 css-loader 来处理，vue-loader 会自动调用</span>
+<span class="token function">npm</span> <span class="token function">install</span> vue-loader css-loader babel-loader babel-core babel-preset-env --save-dev
+</code></pre><blockquote><p>有的人疑惑只是使用 <code>babel-loader</code> 为什么还需要安装后面这么多工具呢，这是因为很多工具都是独立的，<code>loader</code> 只是为了配合 webpack 使用的桥梁，而这里 <code>babel-core</code> 和 <code>babel-preset-env</code> 才是实现 ES6 到 ES5 的核心。</p></blockquote><p>我们再修改 <code>webpack.config.js</code> 配置如下：</p><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里用来配置处理不同后缀文件所使用的loader</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.js$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>对于 babel 的配置，我们还需在项目根目录下刚创建 <code>.babelrc</code> 文件来配置 Babel presets 和 其他相关插件，内容如下：</p><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;presets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">&quot;env&quot;</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre><p>但是虽然虽然都配置好了，项目还是还是会报错，报如下错误：</p><pre class="language-bash"><code>ERROR <span class="token keyword">in</span> ./src/hello.vue
+Module build failed: Error: Cannot <span class="token function">find</span> module <span class="token string">'vue-template-compiler'</span>
+</code></pre><p>有人就不高兴了，明明是按照官方提示安装了依赖，并正确的进行配置，为什么还是会报错呢？遇到错误不要怕，先阅读下错误是什么，很容易发现，是因为 <code>Cannot find module 'vue-template-compiler'</code>，这是因为 <code>vue-loader</code> 在处理 <code>.vue</code> 文件时，还需要依赖 <code>vue-template-compiler</code> 工具来处理。</p><blockquote><p>刚开始我不知道官方为什么没有直接告诉用户需要安装这个依赖，通过阅读 <code>vue-loader</code> 才明白其 <code>package.json</code> 文件中是将 <code>vue-template-compiler</code> 和 <code>css-loader</code> 作为 <a href="https://docs.npmjs.com/files/package.json#peerdependencies" target="_blank" rel="noopener noreferrer">peerDependencies</a>，而 <code>peerDependencies</code> 在安装的时候，并不会自动安装（npm@3.0+），只会给出相关警告，所以这个需要我们手动安装的，当然在 <code>.vue</code> 文件中如果需要写 CSS，也必须用到 <code>css-loader</code>，这个也是在 <code>peerDependencies</code> 中。相关讨论：https://github.com/vuejs/vue-loader/issues/1158</p></blockquote><p>知道问题了，直接安装下就可以了：</p><pre class="language-text"><code>npm install vue-template-compiler css-loader --save-dev
+</code></pre><p>再次运行项目，页面中出现了我们的内容，并没报错，ok，大功告成~</p><h2 id="使用预处理器"><a href="#使用预处理器" aria-hidden="true" class="header-anchor">#</a> 使用预处理器</h2><p>我们已经学会在 <code>.vue</code> 中写 css 了，那么如果使用 sass 预处理器呢？首先安装上篇文章中提到的模块：</p><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> sass-loader node-sass --save-dev
+</code></pre><p>配置只需两步：</p><ol><li>修改 <code>webpack.config.js</code> 中 <code>vue-loader</code> 配置</li></ol><pre class="language-js"><code>  module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 这里用来配置处理不同后缀文件所使用的loader</span>
+      rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          test<span class="token punctuation">:</span> <span class="token regex">/.vue$/</span><span class="token punctuation">,</span>
+          loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+          options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            loaders<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              <span class="token comment">// 这里也可以使用连写方式，但是不利于自定义话参数配置</span>
+              <span class="token comment">// scss: 'vue-style-loader!css-loader!sass-loader'</span>
+              scss<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  loader<span class="token punctuation">:</span> <span class="token string">'vue-style-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                  loader<span class="token punctuation">:</span> <span class="token string">'css-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                  loader<span class="token punctuation">:</span> <span class="token string">'sass-loader'</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// ...</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+</code></pre><ol start="2"><li>给 <code>.vue</code> 文件中的 <code>style</code> 标签，添加 <code>lang=&quot;scss&quot;</code> 属性。</li></ol><p>配置完后，就可以再 <code>.vue</code> 文件中，愉快地编写 <code>sass</code> 语法了。</p><h2 id="加载全局设置文件"><a href="#加载全局设置文件" aria-hidden="true" class="header-anchor">#</a> 加载全局设置文件</h2><p>实际开发中，我们在编写 <code>sass</code> 文件时，经常会将全局的 scss 变量提取出来，放到一个单独的文件中，但是这样就有个问题，每个需要用到的组件，都需要手动 <code>@import './styles/_var.scss'</code> 进来，非常不友好。插件 <code>sass-resources-loader</code> 就很好地帮我们解决这个问题，先安装一下：</p><pre class="language-js"><code>npm install sass<span class="token operator">-</span>resources<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre><p>然后修改 <code>webpack.config.js</code> 文件中 <code>vue-loader</code> 相关配置：</p><pre class="language-js"><code>  <span class="token comment">// ...</span>
+  <span class="token punctuation">{</span>
+    test<span class="token punctuation">:</span> <span class="token regex">/.vue$/</span><span class="token punctuation">,</span>
+    loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      loaders<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        scss<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">'vue-style-loader'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">'css-loader'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">'sass-loader'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// 看这里，看这里，看这里</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">'sass-resources-loader'</span><span class="token punctuation">,</span>
+            options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              <span class="token comment">// 这里的resources 属性是个数组，可以放多个想全局引用的文件</span>
+              resources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/styles/_var.scss'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+</code></pre><p>配置就完成了，我们再来测试下。</p><p>在 <code>src</code> 目录下分别创建 <code>hello1.vue</code> 和 <code>hello2.vue</code> 文件：</p><pre class="language-html"><code><span class="token comment">&lt;!-- hello1.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'hello1'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token punctuation">:</span> <span class="token string">'Hello Vue.js 单文件组件~'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- hello2.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'hello2'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token punctuation">:</span> <span class="token string">'Hello Vue.js 单文件组件~'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>然后创建一个 <code>styles</code> 目录，并在其中新建存放全局变量的文件 <code>_var.scss</code>:</p><pre class="language-scss"><code><span class="token property"><span class="token variable">$green</span></span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>41, 209, 41<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$red</span></span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>177, 28, 28<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>接下来，在 <code>app.js</code> 中引用两个组件：</p><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> hello1 <span class="token keyword">from</span> <span class="token string">'./hello1.vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> hello2 <span class="token keyword">from</span> <span class="token string">'./hello2.vue'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">&quot;#app&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;div&gt;&lt;hello1/&gt;&lt;hello2/&gt;&lt;/div&gt;'</span><span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    hello1<span class="token punctuation">,</span>
+    hello2
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>重新运行项目就可以了。</p><h2 id="有作用域的-style"><a href="#有作用域的-style" aria-hidden="true" class="header-anchor">#</a> 有作用域的 style</h2><p>单文件组件中为我们提供了一个非常便利的功能，就是当 <code>style</code> 标签添加 <code>scoped</code> 属性时，标签内的样式将只作用于当前组件中的元素。</p><p>接着上面的例子，运行后会发现 <code>hello1.vue</code> 中的 <code>h1</code> 颜色并不是想要的 <code>$green</code> 色，而是被 <code>hello2.vue</code> 中的样式覆盖了。于是分别在 <code>hello1.vue</code> 和 <code>hello2.vue</code> 的 <code>style</code> 标签上添加 <code>scoped</code> 属性，如下：</p><pre class="language-html"><code><span class="token comment">&lt;!-- hello1.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- hello2.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>这样一来我们的两个 <code>h1</code> 标签颜色都显示正常了。</p><h2 id="自定义块"><a href="#自定义块" aria-hidden="true" class="header-anchor">#</a> 自定义块</h2><p>在编写某些开源组件时，有时候我们需要同时维护多个组件和组件说明，但是每次修改就要同时修改 <code>.vue</code> 和 <code>.md</code> 文件，相当麻烦。<code>.vue</code> 文件的 <strong>自定义语言块</strong> 功能，就允许我们将 <code>markdown</code> 说明同时写进 <code>.vue</code> 文件中，然后通过插件将其说明部分单独提取到相应的 <code>.md</code> 文件中，这样就可以同时维护说明文档和组件功能了。</p><p>比如我们将 <code>hello1.vue</code> 文件修改如下：</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>docs</span><span class="token punctuation">&gt;</span></span>
+  # 标题
+    这是标题内容，[仓库地址](https://github.com/yugasun/You-May-Not-Know-Vuejs)
+  ## 子标题
+    这是子标题内容
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>docs</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'hello1'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token punctuation">:</span> <span class="token string">'Hello Vue.js 单文件组件~'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>然后修改 <code>webpack.config.js</code> 配置：</p><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 引入相关插件</span>
+<span class="token keyword">const</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> dir<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 入口文件</span>
+  entry<span class="token punctuation">:</span> <span class="token string">'./src/app.js'</span><span class="token punctuation">,</span>
+  <span class="token comment">// 编译输出文件</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'build.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 因为我们这里用的是 require 引入方式，所以应该使用vue.common.js/vue.js/vue.min.js</span>
+      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.common.js'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里定义 webpack-dev-server 开启的web服务的根目录</span>
+    contentBase<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里用来配置处理不同后缀文件所使用的loader</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          loaders<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            scss<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                loader<span class="token punctuation">:</span> <span class="token string">'vue-style-loader'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                loader<span class="token punctuation">:</span> <span class="token string">'css-loader'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                loader<span class="token punctuation">:</span> <span class="token string">'sass-loader'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                loader<span class="token punctuation">:</span> <span class="token string">'sass-resources-loader'</span><span class="token punctuation">,</span>
+                options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                  resources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/styles/_var.scss'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            docs<span class="token punctuation">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token string">'raw-loader'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.js$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token string">'docs.md'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre><p>这里用到了 <code>extract-text-webpack-plugin</code> 导出 <code>text</code> 插件，和 <code>raw-loader</code>，分别都安装下就行。</p><p>然后运行构建命令 <code>npm run build</code>，等运行结束，根目录下会同时生成一个 <code>docs.md</code> 文件，这就是我们想编写的说明文档。</p><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2><p>关于 <strong>单文件组件</strong> 就到这里，实际上 <code>vue-loader</code> 在处理 <code>.vue</code> 文件时，还有很多强大的功能，我们这里只是带着大家感受一般项目中如何使用，同时解释了下相关使用原理说明，更多的功能，建议阅读 <a href="https://vue-loader.vuejs.org/zh-cn/" target="_blank" rel="noopener noreferrer">vue-loader官方文档</a> 。</p><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/blob/master/chapter2/2" target="_blank" rel="noopener noreferrer">源码在此</a></p><h2 id="专题目录"><a href="#专题目录" aria-hidden="true" class="header-anchor">#</a> 专题目录</h2><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs#%E6%96%87%E7%AB%A0%E7%9B%B4%E9%80%9A%E8%BD%A6" target="_blank" rel="noopener noreferrer">You-May-Not-Know-Vuejs</a></p></div><div class="content edit-link"><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/edit/master/docs/art/you-may-not-know-vuejs-6.md" target="_blank" rel="noopener noreferrer">错别字纠正</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-5.html" class="prev">
+          工欲善其事必先利其器
+        </a></span><span class="next"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-7.html">
+          使用ES6快乐的玩耍
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" defer></script><script src="/You-May-Not-Know-Vuejs/assets/js/16.d188bdd4.js" defer></script>
+  </body>
+</html>

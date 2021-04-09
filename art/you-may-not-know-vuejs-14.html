@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你也许不知道的 Vuejs | 最佳实践(2)</title>
+    <meta name="description" content="Vue 从入门到精通系列">
+    <link rel="icon" href="/You-May-Not-Know-Vuejs/logo.png">
+  <script async="async" type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?22a0ab0b25c4b63f25e294e1585f3aa5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+    
+    <link rel="preload" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css" as="style"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" as="script"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/10.6ce6cf04.js" as="script"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/css/1.styles.d7e0337a.css"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/1.d7e0337a.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/11.a0c92858.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/12.7d4c9781.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/13.c15113c9.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/14.f14af779.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/15.f98ca526.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/16.d188bdd4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/17.14df2db4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/18.5c2715c0.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/19.b277ba6f.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/2.20d5ee32.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/20.adab3611.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/3.bda80ff8.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/4.2b6993a1.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/5.b42c65dc.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/6.d7819112.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/7.be44d24b.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/8.48b0d968.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/9.87cbe311.js">
+    <link rel="stylesheet" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/You-May-Not-Know-Vuejs/" class="home-link router-link-active"><!----><span class="site-name">
+      你也许不知道的 Vuejs
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/You-May-Not-Know-Vuejs/art/" aria-current="page" class="sidebar-link">前言</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-1.html" class="sidebar-link">花式渲染目标元素</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-2.html" class="sidebar-link">深入浅出响应式系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-3.html" class="sidebar-link">强大的指令系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-4.html" class="sidebar-link">组件式开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-5.html" class="sidebar-link">工欲善其事必先利其器</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html" class="sidebar-link">单文件组件</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-7.html" class="sidebar-link">使用ES6快乐的玩耍</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-8.html" class="sidebar-link">使用ESLint检查代码质量</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html" class="sidebar-link">定制开发项目模板</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-10.html" class="sidebar-link">插件开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-11.html" class="sidebar-link">自定义路由实现</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-12.html" class="sidebar-link">状态管理</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-13.html" class="sidebar-link">最佳实践(1)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html" aria-current="page" class="active sidebar-link">最佳实践(2)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#mixins" class="sidebar-link">mixins</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#案例1" class="sidebar-link">案例1</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#案例2" class="sidebar-link">案例2</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#案例3" class="sidebar-link">案例3</a></li></ul></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#原理解析" class="sidebar-link">原理解析</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html#专题目录" class="sidebar-link">专题目录</a></li></ul></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html" class="sidebar-link">最佳实践(3)</a></li></ul></div><div class="page"><div class="content"><h1 id="最佳实践-2"><a href="#最佳实践-2" aria-hidden="true" class="header-anchor">#</a> 最佳实践(2)</h1><p>我们在实际开发过程中，当项目越来越大，组件越来越丰富时，经常会面临一个问题：很多组件会公用一些通用的 <code>props</code>、<code>data</code> 和 <code>methods</code>等声明，但是也会掺杂组件自己的一些私有特有声明，那么我们能不能像类的继承一样，来提炼和继承呢？ 当然这是可以的，这里可以通过两个基本 API <a href="https://cn.vuejs.org/v2/api/#extends" target="_blank" rel="noopener noreferrer">extends</a> 和 <a href="https://cn.vuejs.org/v2/api/#mixins" target="_blank" rel="noopener noreferrer">mixins</a> 来实现。这两个API是可以相互替换的，唯一的区别是，<code>extends</code> 属性接受的通常是个单一组件对象，而 <code>mixins</code> 属性接受的是个组件对象数组。当他们只继承单一组件时，是可以互换的。由于本人开发中，习惯使用 <code>mixins</code>，所以本文所有实例均使用 <code>mixins</code> 来实现。</p><h2 id="mixins"><a href="#mixins" aria-hidden="true" class="header-anchor">#</a> mixins</h2><p>先来看看官方介绍：</p><blockquote><p><code>mixins</code> 选项接受一个混入对象的数组。这些混入实例对象可以像正常的实例对象一样包含选项，他们将在 Vue.extend() 里最终选择使用相同的选项合并逻辑合并。举例：如果你的混入包含一个钩子而创建组件本身也有一个，两个函数将被调用。</p></blockquote><p>简单的理解就是Vue实例中的所有属性配置可以通过 <code>mixins</code> 实现继承。</p><p>简单示例如下：</p><pre class="language-js"><code><span class="token keyword">var</span> mixin <span class="token operator">=</span> <span class="token punctuation">{</span>
+  created<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  created<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  mixins<span class="token punctuation">:</span> <span class="token punctuation">[</span>mixin<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 1</span>
+<span class="token comment">// =&gt; 2</span>
+</code></pre><h3 id="案例1"><a href="#案例1" aria-hidden="true" class="header-anchor">#</a> 案例1</h3><p>假设有这么个需求： <code>在某个组件渲染后向服务器端发送一个请求，进行打点</code>，好的，很快我们想到 <code>mounted</code> 钩子函数，然后快速的实现了需求，代码如下：</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'comp1'</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Component comp1 mounted'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><p>然后某一天需求变成了 <code>某几个 组件需要进行打点</code>，好的，我们又进行了一顿猛如虎的操作，将上面代码复制到每个打点的组件，很快把需求搞定了。可是噩梦才刚刚开始，过了几天需求又变了，除了在组件渲染后需要打点，同时还需要在 <code>created</code> 后打点..... <code>此种场景是不是像极了爱情</code>，面对现实我们总是在不停屈服，最终还是忍痛把需求做了。</p><p>回头冷静思考下，其实这个打点是很普遍的需求。如果从头来过，我们一定会选择用继承的方式来实现，而不是盲目的去爱，哦不，盲目的复制粘贴。因为我们有 <code>mixins</code>，只需要编写一次，到处可用。那就让我们从头再来一次，首先创建一个 <code>src/minins/log.js</code> 文件:</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Component </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> created.`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Component </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> mounted.`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后在你需要的任何一个组件中引入使用：</p><pre class="language-js"><code><span class="token keyword">import</span> logMixin <span class="token keyword">from</span> <span class="token string">'@/mixins/log'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'comp1'</span><span class="token punctuation">,</span>
+  mixins<span class="token punctuation">:</span> <span class="token punctuation">[</span>logMixin<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><p>一番修改后，你会发现产品经理妹子也可以那么迷人，是不是你又开始相信爱情了......</p><p>运行项目，打开控制台输出如下：</p><pre class="language-js"><code>Component comp1 created<span class="token punctuation">.</span>
+Component comp2 created<span class="token punctuation">.</span>
+</code></pre><h3 id="案例2"><a href="#案例2" aria-hidden="true" class="header-anchor">#</a> 案例2</h3><p>上面的需求是组件打点，现在我们新增了需求，需要给某几个组件添加一个通用方法 <code>sayHello</code> 到 <code>methods</code> 中，并在组件渲染后调用，但是只是上面打点的部分组件需要添加此功能，虽然只是部分组件，但也有个上百个吧（<code>夸张手法，切勿模仿</code>）。听到这里，你默默推开了身边的产品妹子，拒绝道：<code>对不起，我已经不相信爱情了</code>。此时，有个声音在轻声的嘀咕着：<code>你还可以相信的！</code>。</p><p>好的，那么，我就再让你相信一次。首先添加文件 <code>src/mixins/func.js</code>:</p><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'产品妹子，你好美！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>然后在需要的组件中引入就行了：</p><pre class="language-js"><code><span class="token keyword">import</span> logMixin <span class="token keyword">from</span> <span class="token string">'@/mixins/log'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> funcMixin <span class="token keyword">from</span> <span class="token string">'@/mixins/func'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'comp1'</span><span class="token punctuation">,</span>
+  mixins<span class="token punctuation">:</span> <span class="token punctuation">[</span>logMixin<span class="token punctuation">,</span> funcMixin<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><p>运行项目，打开控制台输出如下：</p><pre class="language-js"><code>Component comp1 created<span class="token punctuation">.</span>
+Component comp2 created<span class="token punctuation">.</span>
+Component comp1 mounted<span class="token punctuation">.</span>
+产品妹子，你好美！
+Component comp2 mounted<span class="token punctuation">.</span>
+</code></pre><h3 id="案例3"><a href="#案例3" aria-hidden="true" class="header-anchor">#</a> 案例3</h3><p>好了，你终于可以跟产品妹子一起在夕阳下愉快地奔跑了。突然有一天，<code>组件渲染后打点，成了公司的规范</code>，也就是你编写的所有组件都需要打点了，产品妹子很无奈的看着你说：<code>这不是我想要的结果，是你做的太优秀，被公司提上了日程，写入了编码规范</code>.....可现实就是这样，<code>你总想逃，却逃不掉</code>......</p><p>其实你还可以逃的，<a href="https://cn.vuejs.org/v2/api/#Vue-mixin" target="_blank" rel="noopener noreferrer">Vue.mixin</a> 说。</p><blockquote><p>全局注册一个混入，影响注册之后所有创建的每个 Vue 实例。插件作者可以使用混入，向组件注入自定义的行为。<strong>不推荐在应用代码中使用</strong>。</p></blockquote><p>这不就是你一直追寻的爱情吗？于是你移除了之前引入的 <code>logMixin</code>，然后默默地在入口文件(<code>src/main.js</code>)中写下了爱情的宣言：</p><pre class="language-js"><code><span class="token comment">//...</span>
+Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Component </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> created from 全局打点`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Component </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> mounted from 全局打点`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// new Vue....</span>
+</code></pre><p>运行项目，打开控制台输出如下：</p><pre class="language-js"><code>Component undefined created <span class="token keyword">from</span> 全局打点
+Component App created <span class="token keyword">from</span> 全局打点
+Component Index created <span class="token keyword">from</span> 全局打点
+Component router<span class="token operator">-</span>link created <span class="token keyword">from</span> 全局打点
+Component comp1 created <span class="token keyword">from</span> 全局打点
+Component comp1 created<span class="token punctuation">.</span>
+Component comp2 created <span class="token keyword">from</span> 全局打点
+Component comp2 created<span class="token punctuation">.</span>
+Component comp3 created <span class="token keyword">from</span> 全局打点
+Component router<span class="token operator">-</span>link mounted <span class="token keyword">from</span> 全局打点
+Component comp1 mounted <span class="token keyword">from</span> 全局打点
+Component comp1 mounted<span class="token punctuation">.</span>
+产品妹子，你好美！
+Component comp2 mounted <span class="token keyword">from</span> 全局打点
+Component comp2 mounted<span class="token punctuation">.</span>
+Component comp3 mounted <span class="token keyword">from</span> 全局打点
+Component Index mounted <span class="token keyword">from</span> 全局打点
+Component App mounted <span class="token keyword">from</span> 全局打点
+Component undefined mounted <span class="token keyword">from</span> 全局打点
+</code></pre><blockquote><p>你会发现所有的 Vue 组件都注入了打点。</p></blockquote><h2 id="原理解析"><a href="#原理解析" aria-hidden="true" class="header-anchor">#</a> 原理解析</h2><p>其实 <code>mixins</code> 用起来非常简单，但是其背后的原理，还是值得我们去深究的:</p><ol><li>为什么 <code>mixins</code> 后，钩子函数是依次执行的，而不是替换？</li><li>为什么 <code>mixins</code> 后，自身 <code>data</code> 属性优于混入属性？</li></ol><p>要想回答上面的问题，我们得从 vue 源码开始说起。</p><p>Vue 在初始化 <code>mixin</code> 的时候，对于不同的属性，采用的策略是不同的，初始化代码在文件 <a href="https://github.com/vuejs/vue/blob/dev/src/core/global-api/mixin.js" target="_blank" rel="noopener noreferrer">src/core/global-api.js</a> 中， 如下：</p><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> mergeOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../util/index'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initMixin</span> <span class="token punctuation">(</span>Vue<span class="token punctuation">:</span> GlobalAPI<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Vue<span class="token punctuation">.</span><span class="token function-variable function">mixin</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>mixin<span class="token punctuation">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Vue<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token function">mergeOptions</span><span class="token punctuation">(</span>Vue<span class="token punctuation">.</span>options<span class="token punctuation">,</span> mixin<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>你会发现是通过 <code>mergeOptions</code> 函数来进行合并的，它在文件 <a href="https://github.com/vuejs/vue/blob/dev/src/core/util/options.js#L388" target="_blank" rel="noopener noreferrer">src/core/util/options.js</a>, 它的源码如下：</p><pre class="language-js"><code><span class="token comment">/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">mergeOptions</span> <span class="token punctuation">(</span>
+  parent<span class="token punctuation">:</span> Object<span class="token punctuation">,</span>
+  child<span class="token punctuation">:</span> Object<span class="token punctuation">,</span>
+  vm<span class="token operator">?</span><span class="token punctuation">:</span> Component
+<span class="token punctuation">)</span><span class="token punctuation">:</span> Object <span class="token punctuation">{</span>
+  <span class="token comment">// 省略不必要代码</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>key <span class="token keyword">in</span> child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">hasOwn</span><span class="token punctuation">(</span>parent<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">mergeField</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">mergeField</span> <span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> strat <span class="token operator">=</span> strats<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">||</span> defaultStrat
+    options<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">strat</span><span class="token punctuation">(</span>parent<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> child<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> vm<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> options
+<span class="token punctuation">}</span>
+</code></pre><p>这个函数很好理解，大概做的事情就是将 <code>child</code> 的属性合入到 <code>parent</code> 中，不同属性采用了不同的策略，这些策略都定义在 <code>strats</code> 对象上。</p><p>我们先看看 <code>生命周期函数</code> 的合并策略，代码如下：</p><pre class="language-js"><code><span class="token comment">/**
+ * Hooks and param attributes are merged as arrays.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">mergeHook</span> <span class="token punctuation">(</span>
+  parentVal<span class="token punctuation">:</span> <span class="token operator">?</span>Array<span class="token operator">&lt;</span>Function<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  childVal<span class="token punctuation">:</span> <span class="token operator">?</span>Function <span class="token operator">|</span> <span class="token operator">?</span>Array<span class="token operator">&lt;</span>Function<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token operator">?</span>Array<span class="token operator">&lt;</span>Function<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> childVal
+    <span class="token operator">?</span> parentVal
+      <span class="token operator">?</span> parentVal<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>childVal<span class="token punctuation">)</span>
+      <span class="token punctuation">:</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>childVal<span class="token punctuation">)</span>
+        <span class="token operator">?</span> childVal
+        <span class="token punctuation">:</span> <span class="token punctuation">[</span>childVal<span class="token punctuation">]</span>
+    <span class="token punctuation">:</span> parentVal
+<span class="token punctuation">}</span>
+</code></pre><p>可以发现 Vue 实例的生命周期函数最终都赋值成了一个数组，并对 <code>mixins</code> 中的进行了数组合并。这就是为什么组件 <code>mixins</code> 后的生命周期函数是依次执行的原因。</p><p>同样再来看看 <code>data</code> 的合入策略：</p><pre class="language-js"><code><span class="token comment">/**
+ * Helper that recursively merges two data objects together.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">mergeData</span> <span class="token punctuation">(</span>to<span class="token punctuation">:</span> Object<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token operator">?</span>Object<span class="token punctuation">)</span><span class="token punctuation">:</span> Object <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> key<span class="token punctuation">,</span> toVal<span class="token punctuation">,</span> fromVal
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>key <span class="token keyword">in</span> <span class="token keyword">from</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    toVal <span class="token operator">=</span> to<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    fromVal <span class="token operator">=</span> <span class="token keyword">from</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">hasOwn</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">set</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> key<span class="token punctuation">,</span> fromVal<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isObject</span><span class="token punctuation">(</span>toVal<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isObject</span><span class="token punctuation">(</span>fromVal<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">mergeData</span><span class="token punctuation">(</span>toVal<span class="token punctuation">,</span> fromVal<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> to
+<span class="token punctuation">}</span>
+</code></pre><p>这个过程就是对象属性的合并，但是 <code>to</code> 上的优先级是高于 <code>from</code> 的，这就是为什么我们在对一个组件进行 <code>mixins</code> 的时候，自身 <code>data</code> 优先级高于混入的 <code>data</code> 属性，也就是如果 <code>mixins</code> 中和自身均含有相同属性时，混入属性值不会被添加到当前组件中。</p><p>感兴趣的同学，还可以去研究下其他属性的混入策略，源码均在 <a href="https://github.com/vuejs/vue/blob/dev/src/core/util/options.js#L388" target="_blank" rel="noopener noreferrer">src/core/util/options.js</a> 中，也很好理解。</p><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2><p>越是简单的东西，越是把双刃剑，实际使用中一定要注意，特别是全局性的混入，这会带来性能开销。大家可以多编写，多总结，找到最合适的使用习惯就好，建议多阅读著名开源项目的源码，你会从中学到更多前辈们的技巧。</p><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/blob/master/chapter4/2" target="_blank" rel="noopener noreferrer">源码在此</a></p><h2 id="专题目录"><a href="#专题目录" aria-hidden="true" class="header-anchor">#</a> 专题目录</h2><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs#%E6%96%87%E7%AB%A0%E7%9B%B4%E9%80%9A%E8%BD%A6" target="_blank" rel="noopener noreferrer">You-May-Not-Know-Vuejs</a></p></div><div class="content edit-link"><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/edit/master/docs/art/you-may-not-know-vuejs-14.md" target="_blank" rel="noopener noreferrer">错别字纠正</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-13.html" class="prev">
+          最佳实践(1)
+        </a></span><span class="next"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html">
+          最佳实践(3)
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" defer></script><script src="/You-May-Not-Know-Vuejs/assets/js/10.6ce6cf04.js" defer></script>
+  </body>
+</html>

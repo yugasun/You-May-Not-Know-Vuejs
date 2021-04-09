@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你也许不知道的 Vuejs | 定制开发项目模板</title>
+    <meta name="description" content="Vue 从入门到精通系列">
+    <link rel="icon" href="/You-May-Not-Know-Vuejs/logo.png">
+  <script async="async" type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?22a0ab0b25c4b63f25e294e1585f3aa5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+    
+    <link rel="preload" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css" as="style"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" as="script"><link rel="preload" href="/You-May-Not-Know-Vuejs/assets/js/19.b277ba6f.js" as="script"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/css/1.styles.d7e0337a.css"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/1.d7e0337a.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/10.6ce6cf04.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/11.a0c92858.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/12.7d4c9781.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/13.c15113c9.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/14.f14af779.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/15.f98ca526.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/16.d188bdd4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/17.14df2db4.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/18.5c2715c0.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/2.20d5ee32.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/20.adab3611.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/3.bda80ff8.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/4.2b6993a1.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/5.b42c65dc.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/6.d7819112.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/7.be44d24b.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/8.48b0d968.js"><link rel="prefetch" href="/You-May-Not-Know-Vuejs/assets/js/9.87cbe311.js">
+    <link rel="stylesheet" href="/You-May-Not-Know-Vuejs/assets/css/styles.1c7e13b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/You-May-Not-Know-Vuejs/" class="home-link router-link-active"><!----><span class="site-name">
+      你也许不知道的 Vuejs
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/art/" class="nav-link router-link-active">正文</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/donate/" class="nav-link">人之初</a></div><div class="nav-item"><a href="/You-May-Not-Know-Vuejs/about/" class="nav-link">关于</a></div><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/You-May-Not-Know-Vuejs/art/" aria-current="page" class="sidebar-link">前言</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-1.html" class="sidebar-link">花式渲染目标元素</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-2.html" class="sidebar-link">深入浅出响应式系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-3.html" class="sidebar-link">强大的指令系统</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-4.html" class="sidebar-link">组件式开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-5.html" class="sidebar-link">工欲善其事必先利其器</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-6.html" class="sidebar-link">单文件组件</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-7.html" class="sidebar-link">使用ES6快乐的玩耍</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-8.html" class="sidebar-link">使用ESLint检查代码质量</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html" aria-current="page" class="active sidebar-link">定制开发项目模板</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#初始化项目" class="sidebar-link">初始化项目</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#定制开发项目模板-2" class="sidebar-link">定制开发项目模板</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#二次开发" class="sidebar-link">二次开发</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#本地测试使用" class="sidebar-link">本地测试使用</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#补充说明" class="sidebar-link">补充说明</a></li></ul></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-9.html#专题目录" class="sidebar-link">专题目录</a></li></ul></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-10.html" class="sidebar-link">插件开发</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-11.html" class="sidebar-link">自定义路由实现</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-12.html" class="sidebar-link">状态管理</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-13.html" class="sidebar-link">最佳实践(1)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-14.html" class="sidebar-link">最佳实践(2)</a></li><li><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-15.html" class="sidebar-link">最佳实践(3)</a></li></ul></div><div class="page"><div class="content"><h1 id="定制开发项目模板"><a href="#定制开发项目模板" aria-hidden="true" class="header-anchor">#</a> 定制开发项目模板</h1><p>有了前面几篇文章的铺垫，我相信我们回过头来再看看用 <code>vue-cli</code> 脚手架工具初始化的项目，就很好理解了。本篇将带着大家全面认识下用 <code>vue-cli</code> 脚手架工具初始化的项目，并会讲解如何定制化自己的项目模板。</p><h2 id="初始化项目"><a href="#初始化项目" aria-hidden="true" class="header-anchor">#</a> 初始化项目</h2><p>先全局安装 <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener noreferrer">vue-cli</a> 脚手架工具：</p><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> -g vue-cli
+</code></pre><p>安装完成后，初始化基于 <code>webpack</code> 的项目模板，按照指示依次填写项目信息和选择需要的模块：</p><pre class="language-bash"><code>$ vue init webpack vue-pro-demo
+
+? Project name vue-pro-demo
+? Project description A Vue.js project
+? Author yugasun <span class="token operator">&lt;</span>yuga_sun@163.com<span class="token operator">&gt;</span>
+? Vue build standalone
+? Install vue-router? Yes
+? Use ESLint to lint your code? Yes
+? Pick an ESLint preset Airbnb
+? Set up unit tests No
+? Setup e2e tests with Nightwatch? No
+? Should we run <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span> <span class="token function">install</span><span class="token variable">`</span></span> <span class="token keyword">for</span> you after the project has been created? <span class="token punctuation">(</span>recommended<span class="token punctuation">)</span> <span class="token function">npm</span>
+
+   vue-cli · Generated <span class="token string">&quot;vue-pro-demo&quot;</span><span class="token keyword">.</span>
+
+
+<span class="token comment"># Installing project dependencies ...</span>
+<span class="token comment"># ========================</span>
+<span class="token punctuation">..</span>.
+
+<span class="token comment"># Project initialization finished!</span>
+<span class="token comment"># ========================</span>
+
+To get started:
+
+  <span class="token function">cd</span> vue-pro-demo
+  <span class="token function">npm</span> run dev
+
+Documentation can be found at https://vuejs-templates.github.io/webpack
+</code></pre><p>执行完成后，当前目录下就会生成命名为 <code>vue-pro-demo</code> 的项目文件夹，结构如下：</p><pre class="language-bash"><code><span class="token keyword">.</span>
+├── README.md           <span class="token comment"># 项目说明文件</span>
+├── build               <span class="token comment"># 存放webpack 构建文件</span>
+├── config              <span class="token comment"># 存放webpack 配置文件</span>
+├── index.html          <span class="token comment"># 项目html模板文件</span>
+├── package.json        <span class="token comment"># 存储项目包依赖，以及项目配置信息</span>
+├── src                 <span class="token comment"># 开发文件夹，一般业务代码都在这里写</span>
+└── static              <span class="token comment"># 项目静态资源文件夹</span>
+
+4 directories, 4 files
+</code></pre><p>对于 <code>src</code> 目录，我们在开发中也会根据文件的功能进行文件夹拆分，比如我个人比较喜欢的结构如下（仅供参考）：</p><pre class="language-bash"><code><span class="token keyword">.</span>
+├── App.vue             <span class="token comment"># 项目如何组件</span>
+├── api                 <span class="token comment"># 存放接口相关文件</span>
+├── assets              <span class="token comment"># 存放项目资源文件，比如图片</span>
+├── components          <span class="token comment"># 存放通用组件</span>
+├── directive           <span class="token comment"># 存放全局自定义指令</span>
+├── filters             <span class="token comment"># 存放全局过滤器</span>
+├── main.js             <span class="token comment"># 项目入口文件</span>
+├── mock                <span class="token comment"># mock数据</span>
+├── router              <span class="token comment"># 路由</span>
+├── store               <span class="token comment"># 状态管理</span>
+├── styles              <span class="token comment"># 样式文件</span>
+├── utils               <span class="token comment"># 存放工具函数</span>
+└── views               <span class="token comment"># 存放视图类组件</span>
+</code></pre><p>规范的目录结构可以很好的规范化你的开发习惯，代码分工明确，便于维护，当你把锅甩给别人时，别人也不至于太难受，这个体会我想大家都懂的，脏话不宜说太多o(╯□╰)o。</p><h2 id="定制开发项目模板-2"><a href="#定制开发项目模板-2" aria-hidden="true" class="header-anchor">#</a> 定制开发项目模板</h2><p>每个人在使用官方项目模板开发项目的时候，都或多或少的会修改一些默认的 <code>webpack</code> 配置，然后添加一些项目经常使用的的插件，也会根据自己需要在 <code>src</code> 目录下添加一些通用的文件夹目录，比如上面所说到的。</p><p>这就存在一个问题，每次我们在初始化项目的时候，都需要重复完成这几项操作，作为一个懒癌晚期患者的程序员，又怎么能容忍此类事情发生呢？所以定制化的需求蠢蠢欲动了。</p><p>下面就介绍下如何对官方的 <a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="noopener noreferrer">webpack模板</a> 进行二次开发。</p><h3 id="二次开发"><a href="#二次开发" aria-hidden="true" class="header-anchor">#</a> 二次开发</h3><p>要做到这点，只需要三步：</p><ol><li>Fork官方源码 <a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="noopener noreferrer">vuejs-templates/webpack</a></li><li>克隆到本地二次开发，添加自己想要的配置和插件，并 push 到 github</li><li>初始化项目时，使用我们自己的仓库就行</li></ol><p>对于步骤1，会使用github的朋友应该都没问题，但是希望你不要问我，复制一个项目为什么叫 <code>fork - 叉子</code>，更不要看成 <code>f**k</code>。随便搜索下就明白了。</p><p>接下来，重点介绍下步骤2。</p><p>克隆项目<a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="noopener noreferrer">vuejs-templates/webpack</a>到我们的本地后，你会发现目录结构是这样的：</p><pre class="language-bash"><code><span class="token keyword">.</span>
+├── LICENSE
+├── README.md
+├── deploy-docs.sh
+├── docs
+├── meta.js
+├── package-lock.json
+├── package.json
+├── scenarios
+├── template
+└── utils
+</code></pre><p>这里我们只需要关心 <code>template</code> 目录就够了，因为这个目录存放的就是我们的项目模板。</p><p>打开 <code>template/src/main.js</code> 文件（项目入口文件），代码如下：</p><pre class="language-js"><code>@@#if_eq build <span class="token string">&quot;standalone&quot;</span>@@
+<span class="token comment">// The Vue build version to load with the `import` command</span>
+<span class="token comment">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span>
+@@<span class="token operator">/</span>if_eq@@
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
+@@#router@@
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+@@<span class="token operator">/</span>router@@
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment">/* eslint-disable no-new */</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  @@#router@@
+  router<span class="token punctuation">,</span>
+  @@<span class="token operator">/</span>router@@
+  @@#if_eq build <span class="token string">&quot;runtime&quot;</span>@@
+  render<span class="token punctuation">:</span> h <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+  @@<span class="token operator">/</span>if_eq@@
+  @@#if_eq build <span class="token string">&quot;standalone&quot;</span>@@
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;App/&gt;'</span>
+  @@<span class="token operator">/</span>if_eq@@
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><blockquote><p>由于hexo对含有 <code>handlebars</code> 语法的演示代码编译有问题，所以将花括号进行了修改 <code>{ -&gt; @, } -&gt; @</code>，请结合实际源代码进行阅读。</p></blockquote><p>其中包含了很多 <a href="https://github.com/wycats/handlebars.js" target="_blank" rel="noopener noreferrer">handlebars</a> 的语法，这里主要用到了 <code>if</code> 条件判断语法，也很好理解。</p><p>好了，现在开始添加一个 <a href="https://github.com/yugasun/vue-axios-plugin" target="_blank" rel="noopener noreferrer">vue-axios-plugin</a> 模块，步骤如下：</p><ol><li>在 <code>template/package.json</code> 的 <code>dependencies</code> 字段中添加 <code>vue-axios-plugin</code> 依赖：</li></ol><pre class="language-js"><code><span class="token comment">//....</span>
+  <span class="token string">&quot;dependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;vue-axios-plugin&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;@1.2.3&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;vue&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;@2.5.2&quot;</span>@@#router@@<span class="token punctuation">,</span>
+    <span class="token string">&quot;vue-router&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;@3.0.1&quot;</span>@@<span class="token operator">/</span>router@@
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">//...</span>
+</code></pre><blockquote><p>这里 <code>@@#router@@</code> 是用来判断初始化的时候你是否选择使用 <code>vue-router</code>，如果不选择，就会根据判断移除 <code>vue-router</code> 依赖，很好理解吧。但是需要特别注意的就是，这里<code>&quot;vue&quot;: &quot;@2.5.2&quot;</code> 末尾的那个逗号（ <code>,</code> ）也会被移除，所以你在添加自定义依赖后，一定要注意当此类情况发生时，保证初始化后，你项目的 <code>package.json</code> 文件格式是否合法有效。</p></blockquote><ol start="2"><li>在 <code>template/src/main.js</code> 中添加插件注入代码：</li></ol><pre class="language-js"><code>@@#if_eq build <span class="token string">&quot;standalone&quot;</span>@@
+<span class="token comment">// The Vue build version to load with the `import` command</span>
+<span class="token comment">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span>
+@@<span class="token operator">/</span>if_eq@@
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueAxiosPlugin <span class="token keyword">from</span> <span class="token string">'vue-axios-plugin'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
+@@#router@@
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+@@<span class="token operator">/</span>router@@
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueAxiosPlugin<span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token comment">// ...</span>
+</code></pre><h3 id="本地测试使用"><a href="#本地测试使用" aria-hidden="true" class="header-anchor">#</a> 本地测试使用</h3><p>好了，这样我们的自定义组件已经添加完成了，那么在提交之前，我们还需要先测试下修改后的模板是否有效，运行命令进行初始化：</p><pre class="language-bash"><code>vue init path/to/webpack-template my-project
+</code></pre><p>这里 <code>vue init</code> 的第一个参数 <code>path/to/webpack-template</code> 就是当前修改后的模板路径，之后还是重复交互式的配置过程，然后运行你的项目就行了。</p><p>不出意外地话，你的项目会很顺利的 <code>npm run dev</code> 跑起来，之后我们只需要 <code>push</code> 到我们自己的 <code>github</code> 仓库就行了。</p><h3 id="使用"><a href="#使用" aria-hidden="true" class="header-anchor">#</a> 使用</h3><p>提交以后，项目同事都可以共享这份模板了，用的时候只需要运行以下命令：</p><pre class="language-bash"><code>vue init yugasun/webpack my-project
+</code></pre><blockquote><p>这里的 <code>yugasun/webpack</code> 参数就是告诉 <code>vue-cli</code> 在初始化的时候到用户 <code>yugasun</code> 的 github 仓库下载 <code>webpack</code> 项目模板。</p></blockquote><p>之后你就可以愉快的编写输出你的 <code>Hello world</code> 了。</p><h3 id="补充说明"><a href="#补充说明" aria-hidden="true" class="header-anchor">#</a> 补充说明</h3><p>当你你足够熟悉项目模板，你也可以对 <code>webpack</code> 配置进行更个性化的配置，或者添加 <code>vue init</code> 时的交互式命令。感兴趣的可以参看下我的个人模板 <a href="https://github.com/yugasun/webpack" target="_blank" rel="noopener noreferrer">yugasun/webpack</a>。</p><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2><p>第二章有关项目配置篇，到这里就结束了，希望通过这一章的讲解，能够帮助大家了解到，一个完整的前端项目结构是如何实现的。从最基本的标签引入开始到工程化的项目架构，我尽量做到用最傻瓜式的方式来讲解，就是希望即使一个前端新手，也可以很轻松的实现自己工程化的项目配置。重点还是贵在多练习，多总结。</p><p><a href="https://github.com/yugasun/webpack" target="_blank" rel="noopener noreferrer">源码在此</a></p><h2 id="专题目录"><a href="#专题目录" aria-hidden="true" class="header-anchor">#</a> 专题目录</h2><p><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs#%E6%96%87%E7%AB%A0%E7%9B%B4%E9%80%9A%E8%BD%A6" target="_blank" rel="noopener noreferrer">You-May-Not-Know-Vuejs</a></p></div><div class="content edit-link"><a href="https://github.com/yugasun/You-May-Not-Know-Vuejs/edit/master/docs/art/you-may-not-know-vuejs-9.md" target="_blank" rel="noopener noreferrer">错别字纠正</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-8.html" class="prev">
+          使用ESLint检查代码质量
+        </a></span><span class="next"><a href="/You-May-Not-Know-Vuejs/art/you-may-not-know-vuejs-10.html">
+          插件开发
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/You-May-Not-Know-Vuejs/assets/js/app.1c7e13b6.js" defer></script><script src="/You-May-Not-Know-Vuejs/assets/js/19.b277ba6f.js" defer></script>
+  </body>
+</html>

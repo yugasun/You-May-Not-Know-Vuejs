@@ -52,7 +52,7 @@ new Vue({
 });
 ```
 
-此时项目是没法运行的，因为 `.vue` 文件 webpack 是没法是别的，它需要对应的 `vue-loader` 来处理才行，而且细心的朋友会发现 `hello.vue` 中用到了 ES6 语法，此时就需要用到相应的语法转化 `loader` 将 ES6 转化成主流浏览器兼容的 ES5 语法，这里就需要用到官方推荐的 `babel` 工具了。先安装需要的 `loader`:
+此时项目是没法运行的，因为 `.vue` 文件 webpack 是没法识别的，它需要对应的 `vue-loader` 来处理才行，而且细心的朋友会发现 `hello.vue` 中用到了 ES6 语法，此时就需要用到相应的语法转化 `loader` 将 ES6 转化成主流浏览器兼容的 ES5 语法，这里就需要用到官方推荐的 `babel` 工具了。先安装需要的 `loader`:
 
 ```bash
 # hello.vue 文件中使用了 css，所以需要 css-loader 来处理，vue-loader 会自动调用
